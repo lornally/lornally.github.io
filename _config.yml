@@ -1,26 +1,39 @@
-# Welcome to Jekyll!
+# Dependencies
+markdown:            kramdown
+highlighter:         rouge
+
+# Gems (for Jekyll 3.0)
+gems: [jekyll-paginate]
+
+# Permalinks
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
 
-# Site settings
-title: 别㲌android (don/t android)
-email: machangkun@me.com
-description: > # this means to ignore newlines until "baseurl:"
-  之前被java坑了, 从2015年开始被Android坑.
-  费劲千辛万苦,
-  貌似爬出来了一点,
-  回头看看,
-  其实坑不深,
-  也不大.
-  同学们应该能比我更快的爬出来.
-  嗯, 3个月吧.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://lornally.github.io" # the base hostname & protocol for your site
-twitter_username: machangkun
-github_username:  lornally
+# Setup
+title:               Naringu
+tagline:             'A Hacker like jekyll theme'
+description:         'oonlab is crafted with <3 by ariestiyansyah.'
+url:                 http://naringu.oonlab.com
+baseurl:             /
+paginate:            7
 
-# Build settings
-markdown: kramdown
+# About/contact
+author:
+  name:              Rizky Ariestiyansyah
+  url:               https://twitter.com/ariestiyansyah
+  email:             ariestiyansyah.rizky@gmail.com
+
+# Custom vars
+version:             2.0
+
+# Social Media
+github:				http://github.com/ariestiyansyah
+twitter:			http://twitter.com/ariestiyansyah
+disqus:             testnaringu
+
+# Theme Author (Please don't edit this line cause of MIT LICENSE rules)
+theme:
+  creator:			Rizky Ariestiyansyah
+  codename:			Naringu
+  link:             https://github.com/ariestiyansyah/naringu
