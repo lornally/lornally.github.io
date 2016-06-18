@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "继续在github上面搭建blog"
 date: 2016-06-13 16:25:06
-description: 第二个测试页面. 如何用jekyll搭建blog, 我下载了一个theme, 测试一下 哈哈. 牛的, 上面的时间是开放出去的时间.
-tags: jekyll, analytics,  tags, comments
+description: 忽然发现github可以搞blog, 太爽了.
+tags: github, blog,  wiki, markdown, pages, jekyll, gem, 淘宝ruby.
 ---
 ### github搭建blog
 本来有个3个想法:

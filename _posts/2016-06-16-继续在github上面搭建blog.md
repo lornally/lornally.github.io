@@ -1,8 +1,7 @@
 ---
-title: "继续在github上面搭建blog"
 date: 2016-06-13 16:25:06
-description: 第二个测试页面. 如何用jekyll搭建blog, 我下载了一个theme, 测试一下 哈哈. 牛的, 上面的时间是开放出去的时间.
-tags: jekyll, analytics,  tags, comments
+description: 接着前文, 继续用jekyll搭建blog, 我下载了一个theme.
+tags: jekyll, blog,  theme,
 ---
 
 ### 不废话了直接上步骤.

@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "别㲌android (don/t android)"
 date: 2016-06-13 16:25:06
-description: 不要搞android, 放开它.
-tags: jekyll, analytics,  tags, comments
+description: 别㲌android (don/t android) 不要搞android, 放开它.
+tags: android, java, 
 ---
 # 别㲌android (don/t android)
 
