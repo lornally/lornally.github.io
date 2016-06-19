@@ -11,28 +11,32 @@ tags: jekyll, blog,  theme,
 3. 把下载的theme解压放进去, 然后, 记得把自己的文章放到_posts里面.
 4. jekyll serve , 启动服务, 看清地址. 如果要改地址. 请修改config.yml文件.
 5. 自己的post记得要有头部. 头部每行都有用:
->                //--- 这个是开头.
-                layout: post, 这个是格式
-                title: "继续在github上面搭建blog" 这个是页面title.
-                date: 2016-06-17 16:25:06 这个是这篇blog预计上线的时间, 不到时间, 别人看不到
-                description: 第二个测试页面. 如何用jekyll搭建blog, 我下载了一个theme, 测试一下 哈哈. 牛的, 上面的时间是开放出去的时间. //这里是描述
-                tags: 这里都是这个blog要贴的标签.
-                 - jekyll
-                 - analytics
-                 - tags
-                 - comments
-                ---
+
+        --- 这个是开头.
+        layout: post, 这个是格式
+        title: "继续在github上面搭建blog" 这个是页面title.
+        date: 2016-06-17 16:25:06 这个是这篇blog预计上线的时间, 不到时间, 别人看不到
+        description: 第二个测试页面. 如何用jekyll搭建blog, 我下载了一个theme, 测试一下 哈哈. 牛的, 上面的时间是开放出去的时间. //这里是描述
+        tags: 这里都是这个blog要贴的标签.
+         - jekyll
+         - analytics
+         - tags
+         - comments
+        ---
+
 6.  其实在搞头部之前, 我们要改三个东西:
-  1. __url: http://localhost:4000 __, 这个要指定你要在浏览器里面输入的url.
-  2.   __baseurl: ''__, 这里要保持为空, 如果你是本地测试, 如果你的测试地址: http://localhost:4000/xxx, 那么这里就应该是: __baseurl: 'xxx'__
-  3. 改掉defaults, 这样就不需要每个页面都指定布局了.
-                  defaults:
-                  -
-                    scope:
-                      path: "" # 一个空的字符串代表项目中所有的文件
-                      type: "posts" # 以前的 `post`， 在 Jekyll 2.2 里。
-                    values:
-                      layout: "post"
+
+    1. __url: http://localhost:4000 __ , 这个要指定你要在浏览器里面输入的url.
+    2.   __baseurl: ''__ , 这里要保持为空, 如果你是本地测试, 如果你的测试地址: http://localhost:4000/xxx, 那么这里就应该是: __baseurl: 'xxx'__
+    3. 改掉defaults, 这样就不需要每个页面都指定布局了.
+
+            defaults:
+            -
+              scope:
+                path: "" # 一个空的字符串代表项目中所有的文件
+                type: "posts" # 以前的 `post`， 在 Jekyll 2.2 里。
+              values:
+                layout: "post"
 7. 弄了default, 那么不使用default的页面就可能出问题, 咋办呢?.
 
 
@@ -80,17 +84,19 @@ tags: jekyll, blog,  theme,
 - https://github.com/jekyll/jekyll/wiki/Sites
 
 配置 yml:
-  title：网站名称。
-  description：网站说明。
-  logo：网站logo。
-  disqus_shortname：disqus标示符。
-  search：是否运行搜索。
-  url：网站中一些资源文件使用的url地址。
-  encoding：编码。
-  markdown：md解析模板。
-  timezone：时区。
+
+      title：网站名称。
+      description：网站说明。
+      logo：网站logo。
+      disqus_shortname：disqus标示符。
+      search：是否运行搜索。
+      url：网站中一些资源文件使用的url地址。
+      encoding：编码。
+      markdown：md解析模板。
+      timezone：时区。
 
 配置自己的域名:
-  在Github中的User Site Repo根目录（即Github中Jekyll目录的根目录）下创建CNAME目录，内容为你的个性域名，格式为www.yourdomain.com即可。
 
-  然后在域名管理系统中解析域名，添加CNAME记录，服务器为username.github.io。等待一个多小时后，就可以使用自己的域名访问了。
+      在Github中的User Site Repo根目录（即Github中Jekyll目录的根目录）下创建CNAME目录，内容为你的个性域名，格式为www.yourdomain.com即可。
+
+      然后在域名管理系统中解析域名，添加CNAME记录，服务器为username.github.io。等待一个多小时后，就可以使用自己的域名访问了。

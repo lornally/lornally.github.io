@@ -24,7 +24,8 @@ tags: github, blog,  wiki, markdown, pages, jekyll, gem, 淘宝ruby.
 1. 用你的`username.github.io`建立一个git项目 **repository**, 比如我建立的就是: lornally.github.io
 2. clone这个项目到本地, 比如我: git clone https://github.com/lornally/lornally.github.io
 3. 在根目录建立一个index.html, 不要太当真, 这个将来会被覆盖掉.
-echo "Hello World" > index.html
+
+        echo "Hello World" > index.html
 4. 推送到服务器
 ```bash    
 git add .
@@ -41,13 +42,16 @@ git push
 gem install jekyll
 ```
 2. 继续在咱们之前的本地目录里面.
+
         jekyll new . --force
 3. 这个时候, 已经可以到_posts目录写blog了, 注意文档格式有要求. `日期.md`, __md__ 代表markdown, 比如:
+
         2009-04-26-我写了一个博客.md
 5. push到github, 就可以用http://lornally.github.io看效果了.
 3. 打开serve就可以本地调试了.
         jekyll serve
-5. 没有了, 看上一步的提示, 一般这样访问:    
+5. 没有了, 看上一步的提示, 一般这样访问:  
+
         http://localhost:4000
 
 

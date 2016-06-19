@@ -1,11 +1,17 @@
 font-family:
 -apple-system, "San Francisco", "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
 
- "San Francisco Display", "Helvetica Neue", "Lucida Grande", "noto sans", Helvetica, Arial, sans-serif;
-
-
  "San Francisco Display", "Helvetica Neue", "Lucida Grande", Helvetica, Arial, "Marker Felt", "Comic Sans MS", sans-serif;
 
+字体默认:
+lato, "San Francisco Display", "Helvetica Neue", "Lucida Grande", "noto sans", Helvetica, Arial, sans-serif;
+
+定宽字体:
+"Roboto Mono Thin", "Cutive Mono", Menlo, "Andale Mono", Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+
+
+字号: 16文本/14code
+weight: 300默认, 标题200.
 
  system, -apple-system, ".SFNSDisplay-Regular"
 

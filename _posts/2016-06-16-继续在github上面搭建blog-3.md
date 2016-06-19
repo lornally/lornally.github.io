@@ -1,15 +1,19 @@
 
 ### 发现几个theme都不好用, 研究一下.
 1. 貌似需要安装bundler
-              gem install bundler
+
+        gem install bundler
 2. 建立一个gemfile, 内容:
-              source 'https://ruby.taobao.org'
-              gem 'github-pages', group: :jekyll_plugins
+
+        source 'https://ruby.taobao.org'
+        gem 'github-pages', group: :jekyll_plugins
 3. 安装jekyll:
-              bundle install
+
+        bundle install
 4. yml配置文件, 注释两句话:
-                # markdown:         redcarpet
-                # relative_permalinks: true
+
+        # markdown:         redcarpet
+        # relative_permalinks: true
 参考链接: https://kersulis.github.io/2015/10/31/jekyll-3/
 
 
@@ -30,14 +34,14 @@
 ### 实验了一下jekyllbootstrap,
 > 不好用, 12年之后就没更新了.
 
-          git clone https://github.com/plusjade/jekyll-bootstrap.git lornally.github.com
-          cd lornally.github.com
-          git remote set-url origin git@github.com:lornally/lornally.github.com.git
-          git push origin master
+    git clone https://github.com/plusjade/jekyll-bootstrap.git lornally.github.com
+    cd lornally.github.com
+    git remote set-url origin git@github.com:lornally/lornally.github.com.git
+    git push origin master
 
 
 
-          rake theme:install git="https://github.com/jekyllbootstrap/theme-the-program.git"
+    rake theme:install git="https://github.com/jekyllbootstrap/theme-the-program.git"
 
 ### 官方theme
 http://themes.jekyllrc.org
