@@ -8,7 +8,7 @@ description: Text formatting examples.
 
 Some examples of text formating for some common text elements.
 
-# Headers
+        # Headers
 
 # Header1
 
@@ -38,19 +38,19 @@ You also can combine them: `**asterisks and _underscores_**` -> **asterisks and 
 Using very cool [feature](http://kramdown.gettalong.org/quickref.html#block-attributes) of kramdown which allows to assign any attribute to a block-level element I've added note and warning:
 
 {% highlight bash %}
->Note 
+>Note
 {: .note}
 {% endhighlight bash %}
 
->Note 
+>Note
 {: .note}
 
 {% highlight bash %}
->Warning 
+>Warning
 {: .note .warning}
 {% endhighlight bash %}
 
->Warning 
+>Warning
 {: .note .warning}
 
 # Keyboard buttons
