@@ -1,6 +1,11 @@
-font-family: -apple-system, "San Francisco", "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
+font-family:
+-apple-system, "San Francisco", "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
 
- "San Francisco Display", "Helvetica Neue", "Lucida Grande", "Marker Felt", "Comic Sans MS";
+ "San Francisco Display", "Helvetica Neue", "Lucida Grande", "noto sans", Helvetica, Arial, sans-serif;
+
+
+ "San Francisco Display", "Helvetica Neue", "Lucida Grande", Helvetica, Arial, "Marker Felt", "Comic Sans MS", sans-serif;
+
 
  system, -apple-system, ".SFNSDisplay-Regular"
 

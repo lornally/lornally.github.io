@@ -4,6 +4,7 @@
   font-size: $size;
   font-size: calculateRem($size);
 }
+
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
@@ -11,27 +12,34 @@
   -o-transition: $args;
   transition: $args;
 }
+
 body {
   padding-top: 80px;
   color: #ddd;
   background-color: #292929;
   background-image: url(./pics/triangles.png);
 }
+
 .copyright {
   color: #ffffff;
 }
+
 .footer {
   text-align: center;
 }
+
 .footer a {
   color: #ee4444;
 }
+
 .sidebar h1 {
   color: #ddd;
-//  font: {
+  //  font: {
 //    size: 1.3em
-//  }
+//
+
 }
+
 .sidebar li {
   margin-top: .7em;
   line-height: 1em;
@@ -43,23 +51,19 @@ body {
   border: 0px;
   border-radius: 6px;
 }
+
 .well > main-page {
   width: 75%;
 }
+
 .main-page {
   width: 75%;
 }
 
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1.12em; }
-h5 { font-size: .83em; }
-h6 { font-size: .75em; }
-
 .author {
   color: #ee4444;
 }
+
 .author a {
   color: #ee4444;
 }
@@ -79,12 +83,10 @@ img + em {
 }
 
 blockquote {
-  color: #bbb;
-  font-size: 1em;
+  color: #8992a5;
 }
 
-.center-image
-{
+.center-image {
   margin: 0 auto;
   display: block;
 }
@@ -93,12 +95,12 @@ blockquote {
 //                    Links
 //********************************************************
 a {
-  color: #3CA2A2;
+  color: #2f83a2;
 }
-a:hover {
-  color: #3CA2A2;
-  border-bottom: 1px solid transparent;
-}
+// a:hover {
+//   color: #3CA2A2;
+//   border-bottom: 1px solid transparent;
+// }
 
 //********************************************************
 //                    Social Links
@@ -220,7 +222,6 @@ div.post-meta {
 }
 .note:before {
   content: "\f06a";
-  font-size: 2em;
   font-family: FontAwesome;
   left: 0px;
   position:absolute;
@@ -245,6 +246,11 @@ nav a {
   font-family: "San Francisco Display", "Helvetica Neue", "Lucida Grande", "noto sans", Helvetica, Arial, sans-serif;
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
+  font-weight: 200;
+}
+nav a h1{
+  margin: 0;
+  padding: 0;
 }
 nav.navbar {
   -webkit-transition: all 0.7s ease;
@@ -255,7 +261,7 @@ nav.navbar.shrink {
 }
 .navbar-brand {
   font-size: 30px;
-  color: #3CA2A2 !important;
+  // color: #3CA2A2 !important;
 
 }
 nav.shrink a {
@@ -300,7 +306,7 @@ nav.shrink .navbar-toggle {
 //********************************************************
 .footer-distributed {
   background-color: #292c2f;
-  font: normal 16px sans-serif;
+  font-size: 16px ;
   padding: 20px 25px;
   margin-top: 80px;
   text-align: center;
@@ -344,7 +350,6 @@ nav.shrink .navbar-toggle {
 }
 
 .key {
-  font-size: 1.0em;
   box-shadow: 1px 0 1px 0 #555, 0 1px 0 2px #888, 0 2px 0 2px #777;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
