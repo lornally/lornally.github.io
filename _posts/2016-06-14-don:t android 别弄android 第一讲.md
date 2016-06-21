@@ -1,7 +1,7 @@
 ---
 date: 2016-06-13 16:25:06
-description: 别㲌android (don/t android) 不要搞android, 放开它.
-tags: android, java, 
+description: 别㲌android (don/t android) 第一讲
+tags: android, java,
 ---
 # 别㲌android (don/t android)
 
