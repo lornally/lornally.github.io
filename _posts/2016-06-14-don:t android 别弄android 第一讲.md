@@ -3,7 +3,9 @@ date: 2016-06-13 16:25:06
 description: 别㲌android (don/t android) 第一讲
 tags: android, java,
 ---
+
 # 别㲌android (don/t android)
+
 
 - android 是基于java的.
 - java是框架巨多的语言.
