@@ -1,6 +1,10 @@
 ---
+
 description: 别㲌android (don/t android) 第二讲: 总纲
+
 ---
+
+
 # 别㲌android (don/t android) 第二讲: 总纲
 
 ## 总纲:
@@ -9,7 +13,7 @@ description: 别㲌android (don/t android) 第二讲: 总纲
 
 ## 限制:
 - android中的很多环境变量, 既不static也不final, 真的无语了.
-导致, 我们自己写代码的时候, 限制很大.
+  导致, 我们自己写代码的时候, 限制很大.
 - 关键还是, 线程安全, 在android成为了一个必须要考虑的问题.
 
 ## 结论:
