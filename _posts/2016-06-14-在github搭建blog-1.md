@@ -27,11 +27,12 @@ tags: github, blog,  wiki, markdown, pages, jekyll, gem, 淘宝ruby.
 
         echo "Hello World" > index.html
 4. 推送到服务器
-```bash    
-git add .
-git commit -m "first"
-git push
-```
+
+	```bash    
+	git add .
+	git commit -m "first"
+	git push
+	```
 5. 在浏览器可以看效果了:http://lornally.github.io
 
 ### jekyll也很简单.
