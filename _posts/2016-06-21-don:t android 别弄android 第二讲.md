@@ -1,9 +1,10 @@
 ---
 date: 2016-06-21 16:25:06
-description: 别㲌android (don/t android) 第二讲: 总纲
+description: 别㲌android (don/t android) 第二讲- 总纲
 tags: android, java,
 ---
 
+> 这一篇之前一直有问题. 原来是头部不能有冒号__:__
 
 # 别㲌android (don/t android) 第二讲: 总纲
 
@@ -19,7 +20,7 @@ tags: android, java,
 ## 结论:
 - 就用一个activity.
   - 不要多个activity切换,
-  - 我们的辅助代码量会飙升, 因为要处理:  
+  - 我们的辅助代码量会飙升, 因为要处理:
   - 效率不佳,
   - 各种内存泄露,
   - 加载异常.
