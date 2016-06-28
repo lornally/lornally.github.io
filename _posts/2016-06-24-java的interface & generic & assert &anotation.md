@@ -37,9 +37,23 @@ interface能解决的问题, 为啥还要范型?
    public E get(int n){return (E)elements[n];} //这个正确的.elements本身是个object数组, 当做E[]使用.
    ```
 
-5. ​
+5. 通配符捕获机制:
 
-### 注解是啥用处呢?
+   ```java
+   public static void swap(pair<?> p);//注意这个不是泛型的.
+   public static <T> void swaphelper(pair<T> p){
+     //在这里可以用类型T声明变量, 从而交换pair的两个元素.
+   }//当然这个地方可以不这么实现, 可以实现一个泛型的swap.
+   //但是, 某些情况, 必须要这样实现. 比如一定是一个pair<?>穿进来作为参数.
+   ```
+
+   ​
+
+### 断言assert是啥用处呢?
+
+```java
+assert iv2!=null; //我们可以断言iv2非空, 如果它空了, 那么久会抛出一个异常, 并终止程序.
+```
 
 ### 恍然大悟, final的用处
 
@@ -47,3 +61,6 @@ interface能解决的问题, 为啥还要范型?
 2. 配合这个声明, 在构造函数赋值, 
 3. 然后, 其他代码就只能读取了. 这个就对了. 
 4. 我的imageNurl就是这么弄得.
+
+### anotation注解
+

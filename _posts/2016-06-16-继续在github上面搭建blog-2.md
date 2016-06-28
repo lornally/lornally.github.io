@@ -6,28 +6,28 @@ tags: jekyll, blog,  theme,
 
 ### 不废话了直接上步骤.
 
-1. 直接下载一个theme, 我用的 clean black, 另一个black: http://jekyllthemes.org/themes/blackdoc/
-2. 把自己之前建好的blog里面如果已经写好了post, 记得copy出来. 然后, 清空.
-3. 把下载的theme解压放进去, 然后, 记得把自己的文章放到_posts里面.
-4. jekyll serve , 启动服务, 看清地址. 如果要改地址. 请修改config.yml文件.
-5. 自己的post记得要有头部. 头部每行都有用:
+1.       直接下载一个theme, 我用的 clean black, 另一个black: http://jekyllthemes.org/themes/blackdoc/
+2.       把自己之前建好的blog里面如果已经写好了post, 记得copy出来. 然后, 清空.
+3.       把下载的theme解压放进去, 然后, 记得把自己的文章放到_posts里面.
+4.       jekyll serve , 启动服务, 看清地址. 如果要改地址. 请修改config.yml文件.
+5.       自己的post记得要有头部. 头部每行都有用:
 
-        --- 这个是开头.
-        layout: post, 这个是格式
-        title: "继续在github上面搭建blog" 这个是页面title.
-        date: 2016-06-17 16:25:06 这个是这篇blog预计上线的时间, 不到时间, 别人看不到
-        description: 第二个测试页面. 如何用jekyll搭建blog, 我下载了一个theme, 测试一下 哈哈. 牛的, 上面的时间是开放出去的时间. //这里是描述
-        tags: 这里都是这个blog要贴的标签.
+              --- 这个是开头.
+              layout: post, 这个是格式
+              title: "继续在github上面搭建blog" 这个是页面title.
+              date: 2016-06-17 16:25:06 这个是这篇blog预计上线的时间, 不到时间, 别人看不到
+              description: 第二个测试页面. 如何用jekyll搭建blog, 我下载了一个theme, 测试一下 哈哈. 牛的, 上面的时间是开放出去的时间. //这里是描述
+              tags: 这里都是这个blog要贴的标签.
          - jekyll
          - analytics
          - tags
          - comments
         ---
 
-6.  其实在搞头部之前, 我们要改三个东西:
+1.  其实在搞头部之前, 我们要改三个东西:
 
     1. __url: http://localhost:4000 __ , 这个要指定你要在浏览器里面输入的url.
-    2.   __baseurl: ''__ , 这里要保持为空, 如果你是本地测试, 如果你的测试地址: http://localhost:4000/xxx, 那么这里就应该是: __baseurl: 'xxx'__
+    2. __baseurl: ''__ , 这里要保持为空, 如果你是本地测试, 如果你的测试地址: http://localhost:4000/xxx, 那么这里就应该是: __baseurl: 'xxx'__
     3. 改掉defaults, 这样就不需要每个页面都指定布局了.
 
             defaults:
@@ -37,7 +37,7 @@ tags: jekyll, blog,  theme,
                 type: "posts" # 以前的 `post`， 在 Jekyll 2.2 里。
               values:
                 layout: "post"
-7. 弄了default, 那么不使用default的页面就可能出问题, 咋办呢?.
+2.  弄了default, 那么不使用default的页面就可能出问题, 咋办呢?.
 
 
 ### 各种推荐的黑色双栏theme:
@@ -76,7 +76,9 @@ tags: jekyll, blog,  theme,
 
 ### 放点参考资料吧:
 - http://jekyllcn.com/docs/structure/
+
 ### 挑选模板的地方:
+
 - jekyllthemes.org
 - jekythemes.net
 - mademistakes , https://mademistakes.com/work/jekyll-themes/

@@ -55,22 +55,23 @@ defaults:
 
 
 
-
-share:
-  facebook: true
-  twitter: true
-  gplus: true
-  linkedin: true
-  pinterest: true
-  email: true
-
+#
+# share:
+#   facebook: true
+#   twitter: true
+#   gplus: true
+#   linkedin: true
+#   pinterest: true
+#   email: true
+#
 social:
-  github:
-  stackoverflow: ''
-  linkedin:
-  instagram: ''
-  lastfm: ''
+  github: lornally
+#   stackoverflow: ''
+#   linkedin:
+#   instagram: ''
+#   lastfm: ''
   rss: feed.xml
+
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key:
@@ -97,3 +98,6 @@ kramdown:
   hard_wrap: true
 
 exclude: ['README.md', 'LICENSE']
+
+gems:
+  - jekyll-feed
