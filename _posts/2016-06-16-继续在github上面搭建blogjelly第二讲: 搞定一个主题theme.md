@@ -1,6 +1,6 @@
 ---
 date: 2016-06-13 16:25:06
-description: jelly第二讲: 搞定一个主题theme.
+description: jelly第二讲, 搞定一个主题theme.
 tags: jekyll, blog,  theme,
 ---
 
