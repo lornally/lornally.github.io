@@ -1,6 +1,6 @@
 ---
 date: 2016-06-13 16:25:06
-description: 接着前文, 继续用jekyll搭建blog, 我下载了一个theme.
+description: jelly第二讲: 搞定一个主题theme.
 tags: jekyll, blog,  theme,
 ---
 
@@ -12,12 +12,12 @@ tags: jekyll, blog,  theme,
 4.       jekyll serve , 启动服务, 看清地址. 如果要改地址. 请修改config.yml文件.
 5.       自己的post记得要有头部. 头部每行都有用:
 
-              --- 这个是开头.
-              layout: post, 这个是格式
-              title: "继续在github上面搭建blog" 这个是页面title.
-              date: 2016-06-17 16:25:06 这个是这篇blog预计上线的时间, 不到时间, 别人看不到
-              description: 第二个测试页面. 如何用jekyll搭建blog, 我下载了一个theme, 测试一下 哈哈. 牛的, 上面的时间是开放出去的时间. //这里是描述
-              tags: 这里都是这个blog要贴的标签.
+                    --- 这个是开头.
+                    layout: post, 这个是格式
+                    title: "继续在github上面搭建blog" 这个是页面title.
+                    date: 2016-06-17 16:25:06 这个是这篇blog预计上线的时间, 不到时间, 别人看不到
+                    description: 第二个测试页面. 如何用jekyll搭建blog, 我下载了一个theme, 测试一下 哈哈. 牛的, 上面的时间是开放出去的时间. //这里是描述
+                    tags: 这里都是这个blog要贴的标签.
          - jekyll
          - analytics
          - tags

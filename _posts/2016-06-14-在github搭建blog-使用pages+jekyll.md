@@ -1,6 +1,6 @@
 ---
 date: 2016-06-13 16:25:06
-description: 忽然发现github可以搞blog, 太爽了.
+description: 忽然发现github可以搞blog, 太爽了, pages+jekyll就可以了..
 tags: github, blog,  wiki, markdown, pages, jekyll, gem, 淘宝ruby.
 ---
 ### github搭建blog
@@ -18,7 +18,7 @@ tags: github, blog,  wiki, markdown, pages, jekyll, gem, 淘宝ruby.
 ### 搭建blog要点
 1. pages其实是自选项, 可以不弄, 不过如果弄了访问会很方便, 按照官方指引弄好, 你的blog地址就是: mckblog.github.io, 这个地址还是比较帅的. pages咋弄下面介绍.
 2. jekyll要弄, 会遇到坑, 这些坑是中国特色, 大墙你懂的.
-好了, 下面我就详细描述如何搞定blog.
+   好了, 下面我就详细描述如何搞定blog.
 
 ### pages真的很简单, 仅需3步.
 1. 用你的`username.github.io`建立一个git项目 **repository**, 比如我建立的就是: lornally.github.io
@@ -28,11 +28,11 @@ tags: github, blog,  wiki, markdown, pages, jekyll, gem, 淘宝ruby.
         echo "Hello World" > index.html
 4. 推送到服务器
 
-	```bash    
-	git add .
-	git commit -m "first"
-	git push
-	```
+   ```bash    
+   git add .
+   git commit -m "first"
+   git push
+   ```
 5. 在浏览器可以看效果了:http://lornally.github.io
 
 ### jekyll也很简单.
@@ -42,14 +42,14 @@ tags: github, blog,  wiki, markdown, pages, jekyll, gem, 淘宝ruby.
 ```bash    
 gem install jekyll
 ```
-2. 继续在咱们之前的本地目录里面.
+1. 继续在咱们之前的本地目录里面.
 
         jekyll new . --force
-3. 这个时候, 已经可以到_posts目录写blog了, 注意文档格式有要求. `日期.md`, __md__ 代表markdown, 比如:
+2. 这个时候, 已经可以到_posts目录写blog了, 注意文档格式有要求. `日期.md`, __md__ 代表markdown, 比如:
 
         2009-04-26-我写了一个博客.md
-5. push到github, 就可以用http://lornally.github.io看效果了.
-3. 打开serve就可以本地调试了.
+3. push到github, 就可以用http://lornally.github.io看效果了.
+4. 打开serve就可以本地调试了.
         jekyll serve
 5. 没有了, 看上一步的提示, 一般这样访问:  
 

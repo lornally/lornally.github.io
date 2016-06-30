@@ -2,7 +2,7 @@
 layout: page
 ---
 
-{% for post in site.posts limit:60 %}
+{% for post in site.posts limit:12 %}
   <h2 class="post-title">
     <a href="{{post.url | prepend:site.baseurl | prepend:site.url}}">
       {{ post.title }}
@@ -34,3 +34,4 @@ layout: page
     <h3><a href="{{ '/archive.html' | prepend: site.baseurl | prepend: site.url }}">Blog archive</a></h3>
   </div>
 </div>
+{% include disqus-comments.html %}

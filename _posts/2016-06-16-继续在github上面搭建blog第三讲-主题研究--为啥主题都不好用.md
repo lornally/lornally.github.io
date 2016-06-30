@@ -1,5 +1,5 @@
-
 ### 发现几个theme都不好用, 研究一下.
+
 1. 貌似需要安装bundler
 
         gem install bundler
@@ -14,7 +14,7 @@
 
         # markdown:         redcarpet
         # relative_permalinks: true
-参考链接: https://kersulis.github.io/2015/10/31/jekyll-3/
+   参考链接: https://kersulis.github.io/2015/10/31/jekyll-3/
 
 
 ### 关于theme
@@ -26,9 +26,9 @@
 
 ### 目前发现, 我们要搬迁需要搬迁几个文件:
 1. 配置类
-  1. config.yml
-  2. gemfile
-2. posts下面的所有blog文件.
+2. config.yml
+3. gemfile
+4. posts下面的所有blog文件.
 
 
 ### 实验了一下jekyllbootstrap,
