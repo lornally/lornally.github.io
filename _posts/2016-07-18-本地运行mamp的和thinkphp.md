@@ -74,21 +74,30 @@
 
 >  李旭冲2013年12月03日
 >
-> 我也遇到过502 后来注释了 sql缓存队列 DB_SQL_BUILD_CACHE ;DB_SQL_BUILD_QUEUE ;DB_SQL_BUILD_LENGTH; DATA_CACHE_CHECK 后就正常了 可能是我的配置有问题
+>  我也遇到过502 后来注释了 sql缓存队列 DB_SQL_BUILD_CACHE ;DB_SQL_BUILD_QUEUE ;DB_SQL_BUILD_LENGTH; DATA_CACHE_CHECK 后就正常了 可能是我的配置有问题
+
 
 
 > 小狗快跑嘟嘟 5月1日发布
 >
->nginx无论是用apt方式还是用编译方式都不麻烦，所以直接记录php-fpm的配置。
->按照以前的思想，php-fpm工作在127.0.0.1:9000端口上，我直接配置后却出现了502 Bad GateWay页面。
->查看nginx日志文件，发现错误是无法连接到本机9000端口。于是查找php-fpm.conf，在其兄弟文件夹pool.d下发现www.conf，关键一句打开是这样的listen = /var/run/php5-fpm.sock，通过查阅资料得知php-fpm有两种工作方式，一种是利用tcp，另一种直接使用socket，socket的方式会更快。因此，nginx下的配置fastcgi_pass 127.0.0.1:9000;的方式显然不支持socket方式。所以，只需要将其更改为fastcgi_pass unix:/var/run/php5-fpm.sock;以后，nginx就可以正常工作了。
+> nginx无论是用apt方式还是用编译方式都不麻烦，所以直接记录php-fpm的配置。
+> 按照以前的思想，php-fpm工作在127.0.0.1:9000端口上，我直接配置后却出现了502 Bad GateWay页面。
+> 查看nginx日志文件，发现错误是无法连接到本机9000端口。于是查找php-fpm.conf，在其兄弟文件夹pool.d下发现www.conf，关键一句打开是这样的listen = /var/run/php5-fpm.sock，通过查阅资料得知php-fpm有两种工作方式，一种是利用tcp，另一种直接使用socket，socket的方式会更快。因此，nginx下的配置fastcgi_pass 127.0.0.1:9000;的方式显然不支持socket方式。所以，只需要将其更改为fastcgi_pass unix:/var/run/php5-fpm.sock;以后，nginx就可以正常工作了。
 >
->https://segmentfault.com/a/1190000005042321
+> https://segmentfault.com/a/1190000005042321
 >
->对thinkphp的支持其实主要是对.htaccess文件的支持，主要是为了去掉index.php。实现有两种方式，其中一种是直接引入include $path/.htaccess，另一种是修改location / {}，但是apache和nginx的.htaccess文件语法不同，在nginx下正确的配置是
+> 对thinkphp的支持其实主要是对.htaccess文件的支持，主要是为了去掉index.php。实现有两种方式，其中一种是直接引入include $path/.htaccess，另一种是修改location / {}，但是apache和nginx的.htaccess文件语法不同，在nginx下正确的配置是
 >
->        location / {
->        if (!-e $request_filename) {
->               rewrite  ^(.*)$  /index.php?s=$1  last;
->               break;
->        }
+> ```sh
+>    location / {
+>    if (!-e $request_filename) {
+>           rewrite  ^(.*)$  /index.php?s=$1  last;
+>           break;
+>    }
+> ```
+
+- 官网有标准写法: http://doc.thinkphp.cn/manual/hidden_index.html
+- 官网的解决方案: http://www.thinkphp.cn/topic/3138.html
+- http://www.sundabao.com/nginx下支持thinkphp的pathinfo和url-rewrite模式/
+- http://my.oschina.net/zhuyajie/blog/523268
+- 特殊思路, 不改nginx配置, 而是调整thinkphp思路: http://wpceo.com/thinkphp-nginx-configure-url-rewrite/

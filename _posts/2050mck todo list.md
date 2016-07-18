@@ -98,9 +98,17 @@ To rearrange the status menu icons, hold down the Command key while dragging the
 - android studio模式darcula
 - textwarangle: douce nuit 4, BBEdit dark
 
+## 中型todo
+
+
+
+## 巨型todo
+
 ## atom编程, 有空学学.
 
 ##### nodejs 有空了解下
+
+
 
 ## 业余时间
 
