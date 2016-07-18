@@ -38,7 +38,7 @@ bogus-nxdomain=223.5.5.5 #防止dns污染的设置. 如果是在阿里云服务�
 
 ```sh
 open -a atom /usr/local/opt/dnsmasq/dnsmasq.conf.example  #这个意思是用atom打开.
-open -a Sublime\ Text /usr/local/etc/dnsmasq.conf #打开配置文件
+open /usr/local/etc/dnsmasq.conf #打开配置文件
 ```
 
 ##### 需要把这个服务器在本机应用
@@ -51,16 +51,6 @@ sudo tee /etc/resolver/dev >/dev/null <<EOF
 nameserver 127.0.0.1
 EOF
 vi /etc/resolv.conf ，# 调整内容为 nameserver 192.168.1.78 
-```
-
-### 配置文件示例
-
-```sh
-# resolv-file=/etc/resolv.dnsmasq.conf
-address=/test.hujing888.com/127.0.0.1
-strict-order
-listen-address=127.0.0.1, 192.168.1.106
-server=112.124.47.27
 ```
 
 ### 测试
@@ -112,3 +102,30 @@ mac + php , 如果我们脱离mamp定制一套—为了更大的自由度, 都�
 
 > 把ibook导入从itune挪到了ibook, 也不提示. 太奇怪了. 而且想不明白, 为啥废掉itune的统一管理的地位.
 
+### 尾声
+
+> 莫名的运转不正常, 然后把配置文件删干净, 然后就正常了.
+>
+> 另外, 要配置为重新启动时自动启动.
+
+### 自动启动
+
+```sh
+sudo chown root /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+#Start Dnsmasq now and accept the warning.
+$ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+```
+
+> 参考: https://oracle-base.com/articles/misc/dnsmasq-for-simple-dns-configurations-mac-osx
+
+### 配置文件示例
+
+```sh
+# resolv-file=/etc/resolv.dnsmasq.conf
+address=/test.hujing888.com/127.0.0.1
+strict-order
+listen-address=127.0.0.1, 192.168.1.106
+server=112.124.47.27
+```
+
+### 
