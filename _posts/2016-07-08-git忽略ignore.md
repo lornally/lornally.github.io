@@ -71,24 +71,27 @@
 ```sh
 #mac
 .DS_Store
+*.DS_Store
+*ds_store
 .*
 *~
 *.iml
 /local.properties
 /build
 /captures
-*.DS_Store
 *.idea/
 *.swo
 .idea/
 .swo
-temp/*/*.php
-temp/*/*/*.php
-data/config.php
+temp/
+config.php
 upload/*
 WeiXin/*
 .tar.gz
-
+log/
+logs/
+.log
+.logs
 
 # built application files
 *.apk
@@ -105,11 +108,13 @@ bin/
 gen/
 
 #php
-/upload
-/*/upload
-/*/*/upload
+upload/
 #thinkphp
 runtime/
+#codeigniter
+cache/
+sessions/
+*sessions/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -121,10 +126,10 @@ local.properties
 # Android Studio
 .idea/
 .gradle
-/*/local.properties
-/*/out
-/*/*/build
-/*/*/production
+local.properties
+out/
+build/
+production/
 *.iml
 *.iws
 *.ipr
@@ -149,6 +154,7 @@ target/
 upload/
 .idea/
 *.iml
+
 ```
 
 ### 参考这个很详细的说明: 

@@ -49,7 +49,7 @@
 3. 然后, 页面访问错误从404, 403变成了502. google搜索, 发现是fastcg设置问题.
 
    ```sh
-   #修改配置文件最后的部分. 贴入mamp默认的三句, 删除掉从别人机器复制的三句.
+   #修改配置文件最后的部分. 贴入mamp默认的三句, 删除掉网上广泛流传, 但是已经时效(从别人机器复制)的三句.
    		fastcgi_pass     unix:/Applications/MAMP/Library/logs/fastcgi/nginxFastCGI.sock;
    		fastcgi_param    SCRIPT_FILENAME $document_root$fastcgi_script_name;
    		include          fastcgi_params;

@@ -2,7 +2,7 @@
 
 ### github的密码自动记录 https方法
 
-1. 网上有人说https不能缓存密码, 这个是不对的. mac和linux都支持https缓存密码, 不过工具不同.
+1. 网上有人说https不能缓存密码, 这个是不对的. mac和linux都支持https缓存密码, 甚至都是相同的工具, 不过是不同的参数而已.
 2. linux: git config --global credential.helper cache
 3. mac: git config --global credential.helper osxkeychain
 4. 参考: https://help.github.com/articles/caching-your-github-password-in-git/
@@ -15,12 +15,15 @@
 
    - 在terminal里面输入: ssh-keygen -t rsa -C "你的邮箱@qq.com"
    - 然后一路回车
-   - 在terminal里面输入: cat ~/.ssh/id_rsa.pub
-2. 复制公钥可以直接用 pbcopy <~/.ssh/id_rsa.pub (感谢汤大师提供)
+
+2. 复制公钥可以直接用 pbcopy <~/.ssh/id_rsa.pub (感谢汤大师提供)\
+
+   - 笨办法: 在terminal里面输入: cat ~/.ssh/id_rsa.pub
+
 
    - 配合cat的步骤, 然后copy terminal里面显示的一大段喵星语,类似这个样子:
-
    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABA你的邮箱@qq.com
+
 3. 把公钥粘贴到github, 大功告成.
 
 ### git用户密码操作中, 需要检查的内容

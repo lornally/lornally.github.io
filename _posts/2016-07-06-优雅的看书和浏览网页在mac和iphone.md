@@ -14,6 +14,7 @@
 
 1. epub是王道, ibook默认支持的. 然后, 就没有然后了, epub放到ibook, 然后, 完全都不用做任何事了. 自动同步的.
    - 注意, 之前book是在itune里面同步的, 现在, 完全没有提示的情况下, 转移到了ibook, 我也比较佩服苹果, 不过ibook体验还是很不错的.
+   - 然后同步了10本之后, 就停止同步了, 这个设置竟然还在itunes, 服了苹果.
 
 2. calibre
    1. 如何获得epub? 我们可以转化,  https://calibre-ebook.com/download_osx

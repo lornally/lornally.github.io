@@ -2,6 +2,8 @@
 
 > nodejs 多线程 nosql? 
 > http://stackoverflow.com/questions/23447413/websockets-php-ajax-javascript-refresh-client
+> 一切都起源于这个帖子:
+> https://ruby-china.org/topics/30467
 
 
 
@@ -41,6 +43,10 @@
 - 中文资料: https://github.com/youyudehexie/node123
   几乎啥都有, 有网络的时候浏览下.
 - 中文社区: https://cnodejs.org
+- 中文: https://www.gitbook.com/book/0532/nodejs/details
+- 中文官网: http://nodejs.cn
+- 英文文档: https://nodejs.org/en/docs/
+- 入门书籍介绍: https://www.v2ex.com/t/295608#reply17
 
 
 ## rail & ruby
@@ -61,3 +67,8 @@
 > 要是想做好那更是得对Nginx整体架构有深入细致的了解，Nginx源码里那些三星级（ `***` ）四星级（` **** `）的C指针让多少英雄好汉望而却步。而且C模块的开发调试真是不简单。
 >
 > 下图是Python社区大名鼎鼎的“大妈”Zoom.Quiet总结的Lua开发和C开发Nginx模块的流程，多么走心的领悟。
+
+## erlang
+
+- 入门: http://nodex.iteye.com/blog/264296
+- ​
