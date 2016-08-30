@@ -61,6 +61,7 @@ ini_set('log_errors', 1);
 #用户可能将包含有效的sid的URL通过email/irc/QQ/MSN等途径告诉其他人。
 #包含有效sid的URL可能会保存在公用电脑上。
 #用户可能保存带有固定不变的SID的URL在他们的收藏夹或者浏览历史记录里。 基于URL的会话管理总是比基于Cookie的会话管理有更多的风险，所以应当禁用。
+$v1 = ini_get("php配置项"); // 获取php.ini中某项设置的值
 ```
 
 ### 参考
