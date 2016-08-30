@@ -69,92 +69,73 @@
 ### git忽略示例, 我的全局ignore版本
 
 ```sh
-#mac
-.DS_Store
-*.DS_Store
+##mac通用
+###ds_store结尾的.
+*DS_Store
 *ds_store
-.*
-*~
-*.iml
-/local.properties
-/build
-/captures
-*.idea/
-*.swo
-.idea/
-.swo
-temp/
-config.php
-upload/*
-WeiXin/*
-.tar.gz
+### .和~
+.*  
+####所有.开头的.
+*~  
+####所有~结尾的
+.*/  
+####以点开头的目录.
+
+###log目录和文件
 log/
 logs/
-.log
-.logs
+*.log
+*.logs
 
-# built application files
-*.apk
-*.ap_
-
-# files for the dex VM
-*.dex
-
-# Java class files
-*.class
-
-# generated files
+##目录
+temp/
+*.idea/
+upload/
+WeiXin/
+### generated files
 bin/
 gen/
-
-#php
-upload/
-#thinkphp
+###php & android
+out/
+build/
+production/
+captures/
+gradle/
+target/
+###thinkphp
 runtime/
-#codeigniter
+###codeigniter
 cache/
 sessions/
 *sessions/
 
-# Local configuration file (sdk path, etc)
-local.properties
 
-# Eclipse project files
-.classpath
-.project
-
-# Android Studio
-.idea/
-.gradle
+##文件
+###配置文件
+config.php
 local.properties
-out/
-build/
-production/
+#### Android Studio
 *.iml
+*.swo
 *.iws
 *.ipr
-*~
 *.swp
 build.gradle
 gradle.properties
-gradle/
 gradlew
 gradlew.bat
 settings.gradle
-/.idea/workspace.xml
-/.idea/libraries
-
-# idea
-/out
-/target
-target/
-.settings/
-.classpath
-.project
-upload/
-.idea/
-*.iml
-
+###压缩文件
+*.tar
+*.gz
+###生成文件
+#### built application files
+*.apk
+*.ap_
+#### Java class files
+*.class
+### files for the dex VM
+*.dex
 ```
 
 ### 参考这个很详细的说明: 
