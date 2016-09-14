@@ -1,0 +1,140 @@
+# php调试:
+
+## php.ini设置
+
+### 找到正确的php.ini
+
+1. 一般而言, 环境中不会只有一个php.ini
+2. 也不是所有的php.ini都起作用.
+3. phpinfo() 可以告诉我们加载的是哪一个php.ini
+4. 同样, phpinfo()也告诉我们log文件在哪里. 等等.
+
+
+
+### 改变php.ini其中的设置
+
+1. 查找 “display_errors”，把Off改为On
+
+2. 找到  log_errors = Off，把Off改为On
+
+3. 设置log文件的路径，找到 error_log = filename，把filename改为log文件的路径
+
+4. error_reporting  =  E_ALL # 这句的意思是, 报告所有错误.
+
+5. date.timezone = "Asia/Shanghai"  改默认时区
+
+## ini_set 设置
+
+```php
+#关于errorlog文件
+#如果就是一个固定的error_log文件, 那么可以预见的是, 这个文件用不了多久, 就会巨大到打不开了, 因此, 一个带日期的log文件, 每天一个log是个不错的主意.
+
+$logFileName = date("Y-m-d") . ".log"; #每天一个log.
+ini_set ("error_log" , $logFileName); #设置为要使用的log文件.
+
+// Report all PHP errors
+ini_set('error_reporting', E_ALL);
+
+// Set the display_errors directive to On, 
+//display_errors：设置错误信息的类别。
+ini_set('display_errors', 1);
+
+// Log errors to the web server's error log
+ini_set('log_errors', 1);
+
+@ ini_set('memory_limit', '64M');
+#menory_limit：设定一个脚本所能够申请到的最大内存字节数，这有利于写的不好的脚本消耗服务器上的可用内存。@符号代表不输出错误。
+
+@ini_set('session.auto_start', 0);
+#session.auto_start：是否自动开session处理，设置为1时，程序中不用session_start()来手动开启session也可使用session，
+#如果参数为0，又没手动开启session，则会报错。
+
+@ini_set('session.cache_expire', 180);
+#session.cache_expire：指定会话页面在客户端cache中的有限期（分钟）缺省下为180分钟。如果设置了session.cache_limiter=nocache时，此处设置无 效。
+
+@ini_set('session.use_cookies', 1);
+#session.use_cookies：是否使用cookie在客户端保存会话ID；
+
+@ini_set('session.use_trans_sid', 0);
+#session.use_trans_sid：是否使用明码在URL中显示SID（会话ID），
+#默认是禁止的，因为它会给你用户带来安全危险：
+#用户可能将包含有效的sid的URL通过email/irc/QQ/MSN等途径告诉其他人。
+#包含有效sid的URL可能会保存在公用电脑上。
+#用户可能保存带有固定不变的SID的URL在他们的收藏夹或者浏览历史记录里。 基于URL的会话管理总是比基于Cookie的会话管理有更多的风险，所以应当禁用。
+$v1 = ini_get("php配置项"); // 获取php.ini中某项设置的值
+```
+
+### 参考
+
+1. [http://foio.github.io/nginx-phpfpm/]
+   phplog设置
+
+2. 代码控制: http://web.stanford.edu/dept/its/communications/webservices/wiki/index.php/How_to_perform_error_handling_in_PHP
+
+   ​
+
+## .htaccess设置 
+
+```xml
+<!--#这个设置可以不是全局性的, 可以专门针对某个目录-->
+<IfModule mod_php5.c>
+   php_flag display_errors on
+</IfModule>
+```
+
+## 命令行设置 
+
+SET GLOBAL general_log = 'ON';
+
+## log
+
+#### 写log到邮件和文件
+
+```php
+   // Destinations
+   define("ADMIN_EMAIL", "nobody@stanford.edu");
+   define("LOG_FILE", "/my/home/errors.log");
+    
+   // Destination types
+   define("DEST_EMAIL", "1");
+   define("DEST_LOGFILE", "3");
+    
+   /* Examples */
+   
+   // Send an e-mail to the administrator
+   error_log("Fix me!", DEST_EMAIL, ADMIN_EMAIL);
+    
+   // Write the error to our log file
+   error_log("Error", DEST_LOGFILE, LOG_FILE);
+```
+
+### php找到log
+
+1. 命令行: php -i | grep error_log_
+
+### 在terminal监控log: 
+
+1. 命令行
+```sh
+tail -f /Applications/MAMP/logs/php_error.log
+```
+2. 链接过去
+```sh
+cd ~/Library/Logs
+ln -s /Applications/MAMP/logs/php_error.log .
+ln -s /Applications/MAMP/logs/apache_access_log .
+```
+### 不改配置, 用log
+
+```php
+ error_log("Error message\n", 3, "/mypath/php.log");
+#The first parameter is the string to be sent to the log. The second parameter 3 means expect a file destination. The third parameter is the log file path.
+```
+
+## 直接喷对象进去
+
+A lesser known trick is that mod_php maps stderr to the Apache log. And, there is a stream for that, so file_put_contents('php://stderr', print_r($foo, TRUE)) will nicely dump the value of $foo into the Apache error log.
+
+### 关于log的结论
+
+> log的结论: 自己弄一个.
