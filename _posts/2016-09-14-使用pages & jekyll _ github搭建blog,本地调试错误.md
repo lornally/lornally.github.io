@@ -4,7 +4,15 @@
 bundle exec jekyll serve
 ```
 
+jellry有空看看, 出什么问题了. blog这个
 
+1. 本地运行, 可以看到报错: bundle exec jekyll serve
+2. {% post_url 2016-06-14-在github搭建blog-使用pages+jekyll %} 这种链接一定要写对.
+3. & 不是这个问题.
+4. _ 不知道是否这个问题.
+5. , 不知道是否这个问题.
+6. +肯定没有问题.
+7. -肯定没有问题.
 
 确认的问题: 
 
