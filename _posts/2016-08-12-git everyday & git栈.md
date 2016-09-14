@@ -1,3 +1,17 @@
+## git 本身就是一个技术栈
+
+> 看了git pro, 觉得自己就不错了, 但是, 工作中总有各种问题, 而且, 这些问题还很基础, 终于认识到git pro 远远不够.
+>
+> linus原话: github的问题在于, 它鼓励了不合理的操作, 因此, 我们没办法在github上面维护linux内核.
+>
+> 简单的说, git pro对于git的理解其实是有偏差的.
+
+## git 如何做代码审核
+
+
+
+## git基础操作
+
 > git help everyday 描述了git常用命令, 这里面依旧藏龙卧虎.
 
 1. 如果一个没有commit的修改, 你又不能commit时, 那么有两个选择, 藏起来/抛弃
@@ -14,7 +28,15 @@
    git checkout --merge some_branch #这是简化版.
    ```
 
-2. 很神奇的, git add .会经常失效
+2. 很神奇的, git add . 会经常失效, 这样git add之后, commit 就不起作用了.
+
+   - 当有删除文件的时候, git add .就不起作用了.
+   - 需要git add -A 
+   - git add .  管理新的和变化的, 不管理删除rm的.
+   - git add -u 管理变化的和删除rm的, 不管理新的.
+   - git add -A管理上面两类.
+   - 注意随着git版本不同, git add . 的表现也不同, 以上表现是git 2.9的表现.
+     git
 
    ```sh
    git add .  #不起作用.
@@ -34,24 +56,7 @@
    - add之后 
    - commit之后 git diff
 
-
-
-
-## git 本身就是一个技术栈
-
-> 看了git pro, 觉得自己就不错了, 但是, 工作中总有各种问题, 而且, 这些问题还很基础, 终于认识到git pro 远远不够.
->
-> linus原话: github的问题在于, 它鼓励了不合理的操作, 因此, 我们没办法在github上面维护linux内核.
->
-> 简单的说, git pro对于git的理解其实是有偏差的.
-
-## git 如何做代码审核
-
-
-
-## git基础操作
-
-1. 查看某个文件所有的版本.
+5. 查看某个文件所有的版本.
 
    ```sh
     git log -p filename #这个命令真的看到了代码变化.
@@ -62,7 +67,7 @@
 
    ​
 
-2. 比较两个文件/文本.
+6. 比较两个文件/文本.
 
    ```sh
    diff xxx ooo#这个其实最爽了, 如果有文件的话.
@@ -79,24 +84,14 @@
    - xcode工具也可以.
    - meld
 
-3. 查看所有被git忽略的文件.
+7. 查看所有被git忽略的文件.
 
    - 一句话解决问题: git ls-files --others -i --exclude-standard 
      - 又是ruby中国: [https://ruby-china.org/topics/17951]
 
-4. git add 和commit 不起作用了.
+8. 猴子学git: [http://backlogtool.com/git-guide/cn/intro/intro1\_3.html]
 
-   - 当有删除文件的时候, git add .就不起作用了.
-   - 需要git add -A 
-   - git add .  管理新的和变化的, 不管理删除rm的.
-   - git add -u 管理变化的和删除rm的, 不管理新的.
-   - git add -A管理上面两类.
-   - 注意随着git版本不同, git add . 的表现也不同, 以上表现是git 2.9的表现.
-     git
-
-5. 猴子学git: [http://backlogtool.com/git-guide/cn/intro/intro1\_3.html]
-
-   这个依旧是gitpro思路在交.
+   这个依旧是gitpro思路在教, 不需要看了.
 
 
 
