@@ -11,7 +11,7 @@ tags: github, blog,  wiki, markdown, pages, jekyll, gem, 淘宝ruby.
 ### 链接:
 
 ```jinja2
-{% post_url 2010-07-21-name-of-post %}
+{% post_url 2016-06-14-在github搭建blog-使用pages+jekyll %}
 ```
 
 
