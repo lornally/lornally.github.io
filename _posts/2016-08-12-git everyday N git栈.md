@@ -63,6 +63,26 @@
     git log filename #这个只是历史. 没有代码变化.
     git log --pretty=oneline 文件名
    # [http://www.binkery.com/archives/203.html]
+   git log --follow -p file
+   git log -- file-name 
+   git blame filename
+
+   # http://progit.org/book/zh/ch2-3.html
+   #详细展示一行中的修改
+   git diff --word-diff
+
+   #删除的内容如何找出来: 
+   git log -S <string> path/to/file
+   #例如: 
+   git log -S setPicture_id app/src/main/java/com/takungae/dagong30/dgruning.java
+   #这个blame方法不行, 据说可以试试bisect
+   git blame --reverse START..END app/src/main/java/com/takungae/dagong30/dgruning.java
+   #这一句最正确: 要加-c 或者 -cc
+   git log -c -S 'setPicture_id' app/src/main/java/com/takungae/dagong30/dgruning.java 
+   ####################################
+   # 这个最正确
+   ####################################
+   git log -c -S '你要搜索的字符串比如删除的那一串' 你要搜索的文件路径/你要搜索的文件名.java 
    ```
 
    ​
