@@ -5,6 +5,23 @@
 1. 注意： .gitignore 和 excludes只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。
 2. 因为, .gitignore这个文件是用于 untracked 文件的忽略列表,  用add将文件标记为 tracked 状态 .gitignore就对其无效了
 3. git rm --cached filename  把他移除
+4. 如果是pull的时候出问题, 还需要先rm filename 物理移除
+
+```sh
+rm filename #物理移除
+git pull --rebase #这个pull方式比较好, 如果本地有commit的时候, 可以有效避免merge.
+git rm --cached filename #git移除
+
+########zsh命令
+rm filename #这个一样的
+gl --rebase
+g rm --cached filename
+gaa #git add -A
+gcam "log" #git commit -am "log" 
+gp #git push
+gss #git status简洁模式
+gst #git status
+```
 
 ### 可以使用gitignore
 
