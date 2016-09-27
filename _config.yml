@@ -56,17 +56,17 @@ defaults:
 
 
 #
-# share:
-#   facebook: true
-#   twitter: true
-#   gplus: true
-#   linkedin: true
-#   pinterest: true
-#   email: true
+share:
+  facebook: true
+  twitter: true
+  gplus: true
+  linkedin: true
+  pinterest: true
+  email: true
 #
 social:
   github: lornally
-  stackoverflow: '马长昆 michael bergman'
+  stackoverflow: 5425932
 #   linkedin:
 #   instagram: ''
 #   lastfm: ''
