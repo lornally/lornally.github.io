@@ -55,7 +55,7 @@ defaults:
 
 
 
-# 这个地方的share设置是没有用的
+# 这个地方的share设置是没有用的, 真的没有用, 即便删除那个share.html里面的第一句判断语句都没有用.
 
 share:
   facebook: true
