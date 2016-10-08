@@ -50,13 +50,15 @@
    - 从入门到放弃: [http://www.w3ctrain.com/2016/06/26/learn-git-in-30-minutes/]
    - git diff 作用: [http://ithelp.ithome.com.tw/articles/10135441]
 
-4. git对比
+4. git对比 todo 这个要再看看.
 
    - add之前 show就可以
    - add之后 
    - commit之后 git diff
 
-5. 查看某个文件所有的版本.
+5. git真对远程的rebase操作 todo
+
+6. 查看某个文件所有的版本.
 
    ```sh
     git log -p filename #这个命令真的看到了代码变化.
@@ -87,7 +89,7 @@
 
    ​
 
-6. 比较两个文件/文本.
+7. 比较两个文件/文本.
 
    ```sh
    diff xxx ooo#这个其实最爽了, 如果有文件的话.
@@ -104,12 +106,12 @@
    - xcode工具也可以.
    - meld
 
-7. 查看所有被git忽略的文件.
+8. 查看所有被git忽略的文件.
 
    - 一句话解决问题: git ls-files --others -i --exclude-standard 
      - 又是ruby中国: [https://ruby-china.org/topics/17951]
 
-8. 猴子学git: [http://backlogtool.com/git-guide/cn/intro/intro1\_3.html]
+9. 猴子学git: [http://backlogtool.com/git-guide/cn/intro/intro1\_3.html]
 
    这个依旧是gitpro思路在教, 不需要看了.
 
