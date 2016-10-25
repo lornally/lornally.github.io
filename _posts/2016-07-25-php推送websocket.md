@@ -1,4 +1,8 @@
 websocket
+
+todo, 这个未来要搞.
+
+
 Websocket只是一个网络通信协议,
 就像 http、ftp等都是网络通信的协议
 相对于HTTP这种非持久的协议来说，Websocket是一个持久化网络通信的协议；
