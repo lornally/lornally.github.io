@@ -21,8 +21,8 @@
    - 笨办法: 在terminal里面输入: cat ~/.ssh/id_rsa.pub
 
 
-   - 配合cat的步骤, 然后copy terminal里面显示的一大段喵星语,类似这个样子:
-   - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABA你的邮箱@qq.com
+- 配合cat的步骤, 然后copy terminal里面显示的一大段喵星语,类似这个样子:
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABA你的邮箱@qq.com
 
 3. 把公钥粘贴到github, 大功告成.
 
@@ -103,3 +103,18 @@
 4. 为了安全可以考虑单独建用户. 对的这是第四步, 不过我没做. 汗......
 
    - 这个有点复杂, 有空再研究.
+
+5. git指定远程源为默认源
+   ```sh
+    #改变git的default remote.
+   	gp -u <remote_name> <local_branch_name>
+   	git push #就是gp
+   ```
+6. git真对远程的rebase操作 
+
+   ```sh
+      gf xxx #git fetch 远程源xxx
+      git fetch #这个就是gf
+      grb xxx/master #rebase xxx源的master
+      git rebase #这个就是grb
+   ```
