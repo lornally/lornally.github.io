@@ -50,7 +50,7 @@
    - 从入门到放弃: [http://www.w3ctrain.com/2016/06/26/learn-git-in-30-minutes/]
    - git diff 作用: [http://ithelp.ithome.com.tw/articles/10135441]
 
-4. git对比 todo 这个要再看看.
+4. git对比 这个要再看看.
 
    - add之前 show就可以
    - add之后 

@@ -74,11 +74,7 @@ st->op->cond
 
 > 这样就定义了从st到op到cond的一个3步的流程.
 
-
-
-
-
 > 后记, 好吧, 貌似jekyll默认不支持flow, 需要插件, 不折腾了.
 >
-> 再叹一声, jekyll也不支持table, 好吧.
+> 再叹一声, jekyll也不支持table...... 好吧.
 
