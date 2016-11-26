@@ -14,6 +14,8 @@
 
 ```
 db.crawler.find({'_id': {$lte: 10} } )
+可以使用findOne, 只查询一个比较省时间.
+limit, skip
 ```
 
 laravel中的命令
