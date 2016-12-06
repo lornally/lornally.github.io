@@ -29,3 +29,34 @@ view
 - ⌘ ↓ 
 - ⌘ k  clear
 
+
+find
+
+- ⌘ f
+- ⌘ g
+- ⇧ ⌘ g
+- ⌘ e 用选择去找
+- ⌘ j 跳转到选择
+
+tab/windows
+
+- ⇧ ⌘ t
+- ⌘ n
+- ⌘ t
+- ⌘ w, ⌥ ⌘ w, ⇧ ⌘ w, ⌥ w
+- ⌘ {}
+- ⌘ m, ⌥ ⌘ m
+- ⌘ l 隐藏光标
+- ⇧ ⌘ l 编辑标题
+- ⌘ d, ⇧ ⌘ d
+- ⌘ 3, 去第三个windows
+
+edit 
+
+- ⌘ x
+- ⌘ c
+- ⌘ v
+- ⌃ ⌘ v 粘贴转义符escaped text
+- ⇧ ⌘ v 粘贴选择
+- ⌘ a
+- ⌥ ⌘ t 特殊字符

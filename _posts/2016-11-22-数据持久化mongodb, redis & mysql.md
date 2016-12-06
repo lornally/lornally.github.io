@@ -50,6 +50,21 @@ $da['ctime'] = get_time();
 News::create($da); //news增加一个.
 ```
 
+更有效率的查询
+
+1. 关键是要控制结果集的尺寸.
+
+```
+工具robomongo里面. 
+1. findOne 0.5s
+2. find.limit(10)  12s
+3. find.limit(100)显示6条 38s
+4. find({})显示6条 39s
+5. db.crawler.remove({}) 移除
+6. count() 计数
+7. db.posts.createIndex( { author_name : 1 } )建立索引
+```
+
 
 
 ### redis

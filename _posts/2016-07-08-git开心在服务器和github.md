@@ -3,9 +3,13 @@
 ### github的密码自动记录 https方法
 
 1. 网上有人说https不能缓存密码, 这个是不对的. mac和linux都支持https缓存密码, 甚至都是相同的工具, 不过是不同的参数而已.
-2. linux: git config --global credential.helper cache
-3. mac: git config --global credential.helper osxkeychain
-4. 参考: https://help.github.com/articles/caching-your-github-password-in-git/
+
+   ```sh
+   git config --global credential.helper cache #linux
+   git config --global credential.helper osxkeychain #mac
+   ```
+
+2. 参考: https://help.github.com/articles/caching-your-github-password-in-git/
 
 ### github的密码 ssh方法
 
