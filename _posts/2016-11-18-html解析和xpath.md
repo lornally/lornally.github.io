@@ -28,18 +28,6 @@ html5能用吗?
   3. XMLReader
   4. DOMDocument
 
-### xpath举例
-
-```php
-//这两句效果是一样的.
-$address=$xm->xpath('//div[@class="wrapper" and @data-cs-p="景点位置"]/div[@class="r-title"]/h2/..');
-$address=$xm->xpath('//div[@class="wrapper" and @data-cs-p="景点位置"]/div[@class="r-title"][h2]');
-```
-
-
-
-
-
 ## SimpleXml
 
 - 参考: http://www.ibm.com/developerworks/cn/xml/x-datamineparsephp/
@@ -82,7 +70,18 @@ object(SimpleXMLElement)#610 (2) {
 $u->'strong';//这里拿到的依旧是一个simplexml. 
 #用数组方法可以拿到属性
 $u['href']; //这里拿到的依旧是个数组. 只有一个元素的数组.
-
+#转数组再拿也行.
+((array)$u)['@attributes'];
+#直接硬转字符串也行.
+(string)$u;
+#尤其是类似这种单元素的情况.
+object(SimpleXMLElement)#681 (1) {
+  ["@attributes"]=>
+  array(1) {
+    ["href"]=>
+    string(15) "/poi/12415.html"
+  }
+}
 ```
 
 ```php
@@ -110,23 +109,8 @@ array(1) {
           string(34) "overflow: hidden;max-height: 48px;"
         }
         ["span"]=>
-        string(544) "奈良公园是位于奈良市若草山麓的都市公园，、等奈良的名胜古迹都在这里，是游奈良的必到之处。
-位于公园附近的是俯瞰奈良风光的绝妙之地，每年1月还会在这里举行“若草烧山”等传统活动。
-悠闲自在地漫步其中是游览公园的最佳方式，这里还有最集中的鹿群，喂食萌萌的小鹿也是游人最大的观赏点。
-这里的鹿也极富灵性，见到游人手上有鹿饼会主动走来，所以需要当心成群结队的小鹿来将你扑倒哦。"
-      }
-    }
-    ["dd"]=>
-    array(6) {
-      [0]=>
-      object(SimpleXMLElement)#22 (2) {
-        ["span"]=>
-        string(6) "电话"
-        ["p"]=>
-        string(14) "(81-742)220375"
-      }
-      [1]=>
-      object(SimpleXMLElement)#920 (2) {
+        string(544) "奈良公园是位于奈良市若草山麓的都市公园，、等奈良的名胜古迹都在这里，是游奈良的必到之处。这里的鹿也极富灵性，见到游人手上有鹿饼会主动走来，所以需要当心成群结队的小鹿来将你扑倒哦。"}}
+///////////////////////////////////////////////////////////////////
 //后面的输出省略了. 我们如何拿到: string(544) "奈良公园是
 print_r($result[0]->dt->p->span); //这样不行, 会拿到莫名的东西. 关键是字符串不见了.
 print_r((string)$result[0]->dt->p->span);//这样就ok了.
@@ -147,7 +131,6 @@ echo "\n dd span: ", $result[0]->dd[2]->span;
 strip_tags((string)$result[0]->dd[$i]->p->asXML());
 #处理成json, 再处理为数组
 $res = json_decode(json_encode($result), true);
-
 ```
 
 参考: http://www.phper163.com/archives/335
@@ -158,8 +141,34 @@ http://www.phperz.com/article/14/1124/4438.html
 
 http://www.jb51.net/article/51127.htm
 
+### 解析html
 
-### xpath
+```php
+#目标是: 成功执行这个.
+$xml->xpath($xpath); 
+#马蛋, 这个不行:
+@$xml=simplexml_load_string($html);
+#这个也不行:
+@$xml = simplexml_import_dom($dom);
+#试试这个: 
+@$dom->loadHTML($html);
+#要这样一整套才行:
+$dom = new \DOMDocument();
+@$dom->loadHTML($html);
+@$xml = simplexml_import_dom($dom);
+```
+
+
+
+## xpath
+
+### xpath举例
+
+```php
+//这两句效果是一样的.
+$address=$xm->xpath('//div[@class="wrapper" and @data-cs-p="景点位置"]/div[@class="r-title"]/h2/..');
+$address=$xm->xpath('//div[@class="wrapper" and @data-cs-p="景点位置"]/div[@class="r-title"][h2]');
+```
 
 - xpath能直接拿到某个标签的内容.
 - 爬虫官方帮助: https://doc.phpspider.org/developer_tools.html
@@ -387,3 +396,12 @@ $xml->xpath('//body/*[4]'); //body下面的第四个元素, 不是第五个. [0]
 
 更多: http://www.ibm.com/developerworks/library/x-xpathphp/
 https://www.sitepoint.com/php-dom-using-xpath/
+
+### 选取属性
+
+```xpath
+//@href
+```
+
+
+

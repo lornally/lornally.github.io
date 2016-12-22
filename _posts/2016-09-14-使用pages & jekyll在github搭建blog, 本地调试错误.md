@@ -18,7 +18,9 @@ bundle exec jekyll serve
 
 7. _ 这个有问题. do not use file or directory names that start with an underscore (_), period (.), or hash symbol (#), or that end with a tilde (~).
 
-8. 很多时候, 编译需要时间. 编译正确, 显示就不会有问题.
+8. _.#~这四个符号有问题.
+
+9. 很多时候, 编译需要时间. 编译正确, 显示就不会有问题.
    terminal, 设置默认尺寸.
 
    ​
