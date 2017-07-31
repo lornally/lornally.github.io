@@ -268,15 +268,29 @@ function curl_get_contents($url) {
 ?>
 ```
 
-### 优化
+### 优化curl
 
 ```php
-观察发现init和close都比较费时间, 师傅能一次次init, 多次使用呢?
+观察发现init和close都比较费时间, 是否能一次次init, 多次使用呢?
 stackoverflow说可以的
 $ch = curl_init();
 while(true){
   这里搞exec
 }
 curl_close($ch);
+```
+
+### 扒取的参数
+
+```javascript
+1. 图片.
+var mddid = 172703, poiid = 7518;
+2. 页面.
+data: {
+  'sAct'   : 'KMdd_StructWebAjax|GetPoisByTag',
+  'iMddid' : 10183,
+  'iTagId' : tagId || 0,
+  'iPage'  : page
+},
 ```
 
