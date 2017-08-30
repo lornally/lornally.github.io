@@ -6,7 +6,6 @@ mongodb, 可以使用docker的.
    docker ps #查看docker的接口映射情况.
    ```
 
-   ​
 
 2. 修改docker里面, /根目录下面start.sh里面, 关于启动docker需要author的代码
 
