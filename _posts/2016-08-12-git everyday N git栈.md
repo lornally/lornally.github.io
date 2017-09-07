@@ -53,8 +53,8 @@
 4. git对比 这个要再看看.
 
    - add之前 show就可以
-   - add之后 
-   - commit之后 git diff
+   - add之后  git diff
+   - commit之后 git show HEAD 
 
 5. git指定远程源为默认源
 
@@ -132,7 +132,7 @@
 
 10. 猴子学git: [http://backlogtool.com/git-guide/cn/intro/intro1\_3.html]
 
-   这个依旧是gitpro思路在教, 不需要看了.
+  这个依旧是gitpro思路在教, 不需要看了.
 
 
 
