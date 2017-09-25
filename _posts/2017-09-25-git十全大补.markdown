@@ -1,0 +1,264 @@
+1. 一定要弄gitignore, 而且是配全局的, 否则你会被ds_store搞死.
+   * 为啥要配全局.
+
+2. 允许git pull的情况下, 我们应该咋办? 用图示解释.
+
+   ```sh
+   1. gl
+   2. gaa
+   3. gcam ''
+   4. gp
+   ```
+
+3. 如果一不小心, 先做了gaa 和gcam 咋办?
+
+   ```sh
+   1. gaa
+   2. gcam '某个注释'
+   3. gf
+   4. grb
+   5. gp
+   ```
+
+4. 改变pull的行为->rebase
+
+   ```yaml
+   本地分支和远程分支的绑定（tracking)，加上 rebase 策略：
+   [branch "master"]
+       remote = origin
+       merge = refs/heads/master
+       rebase = true
+   这样一来，更新代码（pull）的时候就会自动应用 rebase 而不是产生 merge commit，除非有其他情况产生，比如三方合并造成了冲突需要人共去干预。大部分时候还是很聪明的，只要团队里的习惯都良好，那么可以保持一个非常干净漂亮的树形。
+   配置了这个项目之后, 可能会报错: 
+   fatal: The current branch master has multiple upstream branches, refusing to push.
+   通过修改gitconfig文件可以解决: 
+   [remote "origin"]
+   	push = HEAD
+   原因是, 如果不指定分支, 则分支要对应去推. 之前没有指定branch, 那么默认的模式是完美的, 但是咱们指定了branch, 那么就出问题了, 就要指定remote
+   原因确定了, 是因为在.gitconfig和.git/config都定义了[branch 'master']虽然定义一模一样, 但是, git还是晕了.
+   ```
+
+5. git快捷键: 
+
+   ```sh
+   - g: git
+   - ga: git add
+   - gaa: git add —all
+   - gb: git branch
+   - gc: git commit -v
+   - gcam: git commit -am
+   - gcb: git checkout -b
+   - gcm: git checkout master
+   - gcd: git checkout develop
+   - gco: git checkout
+   - gd: git diff
+   - gdca git diff --cached
+   - gdt git diff-tree --no-commit-id --name-only -r
+   - gdw git diff --word-diff
+   - gf: git fetch
+   - gg: git gui citool
+   - gk: \gitk —all —branches
+   - gl: git pull
+   - glg: git log —stat —color
+   - glgg: git log —graph —color
+   - gm: git merge
+   - gp: git push
+   - gr: git remote
+   - grb: git rebase
+   - grh: git reset HEAD
+   - grv:git remote -v
+   - gsb: git status -sb
+   - gss: git status -s
+   - gst: git status
+   - gsta: git stash
+   - gts: git tag -s
+   ### 实用快捷键
+   ### add之前 
+   - gapa #用这个添加, 会能够看到修改的内容.
+   - gd   #git diff
+   - gdw  #git diff —word-diff
+   - gsps是否可以??????
+   ### add之后 
+   - gdca  #git diff -cached
+   ### commit 之后 
+   - gsps #git show --pretty = short --show-signature
+   - gwch #git whatchanged -p --abbrev-commit --pretty = medium
+   ### 看修改记录
+   - glgp filename #git log --stat --color -p  
+   - git log -c -S '你要搜索的字符串比如删除的那一串' 你要搜索的文件路径/你要搜索的文件名.java #此处的-c和-S都是diff命令
+   - gbl #git blame -b -w filename  #查看每一行是谁写的
+   ### 已经记住的, 经常用的
+   - gst
+   - gl
+   - gp
+   - gaa
+   - gcam
+   - gf
+   - grb
+   ```
+
+   快捷键我们也可以自由定义
+
+   ```sh
+   #看一下zsh的设置
+   cat ~/.zshrc
+   #从上面能看到是引入了下面这个
+   cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh
+   #从这个文件就能看到一堆alias, 就是之前列出来的那些了.
+   ```
+
+6. git比较差异
+
+   ```sh
+   - add之前 git show就可以
+   - add之后 git diff
+   - commit之后 git show head
+   diff xxx ooo#这个其实最爽了, 如果有文件的话.
+   beyond compare #只有文本也可以, 这个是我最喜欢的地方.
+
+   1. 目前暂存中的修改：git diff --staged
+   2. 尚未缓存的改动：git diff    缩写: gd
+   3. 查看已缓存的改动： git diff —cached  缩写: gdca
+   4. 查看已缓存的与未缓存的所有改动：git diff HEAD
+   5. 显示摘要而非整个 diff：git diff --stat
+   6. gdt git diff-tree --no-commit-id --name-only -r
+   7. gdw git diff --word-diff
+   ```
+
+   参考: [http://m.runoob.com/git/git-basic-operations.html]
+
+7. git拿到某个版本
+
+   ```sh
+   git checkout -b store     # 在目前分支的基础上生成新的分支store
+   git checkout 某个file  # 不仅仅是拿分支, 也可以拿到最新版本, 也就是说放弃本地修改
+   ```
+
+8. git查询
+
+   ```sh
+   git log -p filename #这个命令真的看到了代码变化.
+   git diff --word-diff #详细展示一行中的修改
+   git log -c -S '你要搜索的字符串比如删除的那一串' 你要搜索的文件路径/你要搜索的文件名.java #找到删除的内容
+   git ls-files --others -i --exclude-standard #查看所有被忽略的文件
+   ```
+
+
+
+8. git各种状态查看
+
+   ```sh
+   gst #查看状态
+   git remote
+   git branch
+   git tag
+   git show
+   git log
+   git config
+   git config --list #很神奇的是, 直接git config 呼出的帮助里面没有list这个项目.
+       open ~/.gitconfig # 可以直接查看这个文件.
+       git config -l  #缩写方法.
+       git config -e #git config --edit的缩写, 用文本编辑器编辑.
+   ```
+
+9. git设置
+
+   ```sh
+   git config --global credential.helper osxkeychain #记住https的密码, 不过随着mac的升级, 这个貌似不好使了
+   git branch --set-upstream-to=origin/master master   #指定默认的pull和push的branch
+   gp -u <remote_name> <local_branch_name>#改变git的default remote.
+   ssh-keygen -t rsa -C "你的邮箱@qq.com" #生成秘钥.
+   pbcopy <~/.ssh/id_rsa.pub  #copy秘钥.
+   #然后在github或者gitlab贴入秘钥就好了, 如果服务器没有装gitlab, 没关系, 命令行可以搞定, 把秘钥存入相应目录就好了.
+   ```
+
+10. 原子解释
+
+ ```sh
+ pull = fetch + merge
+ git fetch origin  # 抓取源origin的master分支, 在本地成为origin/master分支, 注意这个分支不是本地的master分支, 我们可以手动合并到master分支. fetch只是把远程origin抓到本地origin/master.
+ git merge master # 生成了一个新的版本, 合并了master到当前分支, 但是, master和store依旧是分叉的, 有分叉的过去和分叉的未来. 
+ git rebase master # 把master当做当前分支的基础, 这样master和store就没有分叉的历史了, 看上去也比较清爽, 而且也比较符合实际的业务逻辑. 这样当你推向主线的时候, 主线的管理者不需要merge了.
+ ```
+
+11. git 暂存操作
+
+    ```sh
+    git reset —hard  #抛弃未commit修改, 这个是必须的
+    git clean -dfx #清除那些没有被版本控制的文件. 这个是配套的, 如果git status没有显示未控制文件, 那么可以不弄这句.
+    git stash #把本地未提交的东西保存一下. 免得checkout不同分支时会被混掉, 我就发生了这事. 血的教训啊.
+    #stash 是一个栈, 可以pop出来, 也可以直接抛弃掉.
+    # 类似下面的三句话, 可以简化
+    git stash
+    git checkout some_branch
+    git stash pop
+    git checkout --merge some_branch #这是简化版.
+    ```
+
+12. git每日工作流程
+
+    * http://gwiki.cn/2016/12/git每日工作流程
+    * http://gwiki.cn/2016/12/git每日工作流程之回退
+    * http://gwiki.cn/2016/12/git每日工作流程之从基础来理解他
+
+13. git提交进一步
+
+    ```sh
+    gst #可以看到修改了哪些文件, 然后就可以进行下面的操作了
+    git add --patch
+    gapa # 用这个添加, 会能够看到修改的内容.
+
+    - add之前 show就可以
+    git show
+    git diff file
+    gd  #直接调用不带参数的git diff，将显示工作目录树中未被暂存（当然还没有提交）的改动。（比较的是工作目录树与暂存区）。
+
+    - add之后  
+    git diff 
+    git diff –cached<file> 
+    gdca  #　　添加参数--cached，是比较暂存区和版本库之间的区别。
+
+    - commit之后 
+    git diff HEAD #添加参数HEAD，可以比较工作目录树（包括暂存的和未暂存的修改）与版本库之间的差别。HEAD关键字指的是当前所在分支末梢的最新提交（也就是版本库中该分支上的最新版本）。
+    git show head
+    gsps #git show --pretty = short --show-signature
+    gwch #git whatchanged -p --abbrev-commit --pretty = medium
+
+    - 更多内容
+    #详细展示一行中的修改
+    git diff --word-diff
+    gdw
+    #和git log配合
+    git diff <hashcode> <hashcode>  <file>
+    ### 如果确切知道文件名
+    glgp # git log --stat --color -p  
+    glgp filename #这个命令真的看到了代码变化.
+    ```
+
+14. git跟踪
+```sh
+### 如果确切知道文件名
+glgp # git log --stat --color -p  
+glgp filename #这个命令真的看到了代码变化.
+
+### 如果记得文件内容, 可以定位到删除的内容
+git log -c -S '你要搜索的字符串比如删除的那一串' 你要搜索的文件路径/你要搜索的文件名.java 
+glg
+glgg
+
+### 查看每一行是谁写的
+gbl #git blame filename
+
+### 查看历史修改记录
+glol -p  filename #好的, 可以成功看到修改记录.
+glol filename #可以看到和这个文件有关的所有提交, 这个是概要列表, 没有每次的具体修改.
+### 查看所有被git忽略的文件.
+git ls-files --others -i --exclude-standard # - 一句话解决问题: 
+
+### git log直接查看历史修改记录更麻烦的做法.
+glol -p  filename #好的, 可以成功看到修改记录.
+glol filename #可以看到和这个文件有关的所有提交, 这个是概要列表, 没有每次的具体修改.
+```
+### 参考
+
+1. http://www.cnblogs.com/mengdd/archive/2013/04/11/3013843.html
