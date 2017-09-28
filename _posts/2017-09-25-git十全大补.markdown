@@ -41,37 +41,6 @@
 5. git快捷键: 
 
    ```sh
-   - g: git
-   - ga: git add
-   - gaa: git add —all
-   - gb: git branch
-   - gc: git commit -v
-   - gcam: git commit -am
-   - gcb: git checkout -b
-   - gcm: git checkout master
-   - gcd: git checkout develop
-   - gco: git checkout
-   - gd: git diff
-   - gdca git diff --cached
-   - gdt git diff-tree --no-commit-id --name-only -r
-   - gdw git diff --word-diff
-   - gf: git fetch
-   - gg: git gui citool
-   - gk: \gitk —all —branches
-   - gl: git pull
-   - glg: git log —stat —color
-   - glgg: git log —graph —color
-   - gm: git merge
-   - gp: git push
-   - gr: git remote
-   - grb: git rebase
-   - grh: git reset HEAD
-   - grv:git remote -v
-   - gsb: git status -sb
-   - gss: git status -s
-   - gst: git status
-   - gsta: git stash
-   - gts: git tag -s
    ### 实用快捷键
    ### add之前 
    - gapa #用这个添加, 会能够看到修改的内容.
@@ -262,3 +231,7 @@ glol filename #可以看到和这个文件有关的所有提交, 这个是概要
 ### 参考
 
 1. http://www.cnblogs.com/mengdd/archive/2013/04/11/3013843.html
+
+### git 全部快捷键
+
+参见: 2016-09-20-zsh的git快捷键
