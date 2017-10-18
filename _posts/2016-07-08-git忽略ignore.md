@@ -9,6 +9,7 @@
 
 ```sh
 rm filename #物理移除
+git reset HEAD <file> #移除那些被错误的add的文件
 git pull --rebase #这个pull方式比较好, 如果本地有commit的时候, 可以有效避免merge.
 git rm --cached filename #git移除
 git rm --ignore-unmatch  --cache -r */*/.DS_Store #移除两层目录下的ds, -r循环移除, --ignore-unmatch忽略不匹配的情况.
