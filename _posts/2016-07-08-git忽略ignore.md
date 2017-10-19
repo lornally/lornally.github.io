@@ -17,6 +17,11 @@ find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch --cached
 
 zsh 里面这些都报错. 所以mate .zshrc , 加下面这句: 
 setopt no_nomatch
+#此处有详细案例分析: http://forum.ubuntu.org.cn/viewtopic.php?t=284253
+# 实际上 下面这句, 就可以完美的递归删除所有ds_store的版本控制.
+git rm --cached */.DS_Store
+
+
 
 ########zsh命令
 rm filename #这个一样的
