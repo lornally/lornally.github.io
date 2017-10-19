@@ -12,7 +12,11 @@ rm filename #物理移除
 git reset HEAD <file> #移除那些被错误的add的文件
 git pull --rebase #这个pull方式比较好, 如果本地有commit的时候, 可以有效避免merge.
 git rm --cached filename #git移除
-git rm --ignore-unmatch  --cache -r */*/.DS_Store #移除两层目录下的ds, -r循环移除, --ignore-unmatch忽略不匹配的情况.
+git rm --ignore-unmatch  --cached -r */*/.DS_Store #移除两层目录下的ds, -r循环移除, --ignore-unmatch忽略不匹配的情况.
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch --cached
+
+zsh 里面这些都报错. 所以mate .zshrc , 加下面这句: 
+setopt no_nomatch
 
 ########zsh命令
 rm filename #这个一样的
