@@ -276,16 +276,98 @@ println(inputString)
 val fileContent = this::class.java.getResource("/html/file.html").readText()
  ```
 
+### 进入另一个领域 函数式functional
 
+scheme
 
-# 进入另一个领域 函数式functional
-
-### scheme
+```scheme
+(apply string (file->char_list "mydata.txt"))
+;另一种写法
+(foldr (lambda (x y) (string-append (string x) y)) "" (file->char_list "mydata.txt"))
+;更简单
+(file->lines "somefile")
+```
 
 golang
 
+```go
+package main
+import (
+    "fmt"
+    "io/ioutil"
+)
+func main() {
+    b, err := ioutil.ReadFile("file.txt") // just pass the file name
+    if err != nil {
+        fmt.Print(err)
+    }
+    fmt.Println(b) // print the content as 'bytes'
+    str := string(b) // convert content to a 'string'
+    fmt.Println(str) // print the content as a 'string'
+}
+```
+
+
+
 haskell
+
+```haskell
+import System.IO  
+import Control.Monad
+main = do  
+        let list = []
+        handle <- openFile "test.txt" ReadMode
+        contents <- hGetContents handle
+        let singlewords = words contents
+            list = f singlewords
+        print list
+        hClose handle   
+f :: [String] -> [Int]
+f = map read
+```
+
+
 
 clojure
 
+```clojure
+(slurp "/tmp/test.txt") ;read entire file
+(use 'clojure.java.io) ;read line by line
+(with-open [rdr (reader "/tmp/test.txt")]
+  (doseq [line (line-seq rdr)]
+    (println line)))
+
+```
+
+
+
 erlang
+
+
+
+```erlang
+readlines(FileName) ->
+    {ok, Device} = file:open(FileName, [read]),
+    try get_all_lines(Device)
+      after file:close(Device)
+    end.
+
+get_all_lines(Device) ->
+    case io:get_line(Device, "") of
+        eof  -> [];
+        Line -> Line ++ get_all_lines(Device)
+    end.
+
+readlines(FileName) -> %一种
+    {ok, Data} = file:read_file(FileName),
+    binary:split(Data, [<<"\n">>], [global]).
+
+{ok, Bin} = file:read_file(Filename). %最简
+
+read(File) -> % line by line
+    case file:read_line(File) of
+        {ok, Data} -> [Data | read(File)];
+        eof        -> []
+    end.
+```
+
