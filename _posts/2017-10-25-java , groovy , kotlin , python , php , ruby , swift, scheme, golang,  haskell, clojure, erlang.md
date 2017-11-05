@@ -246,7 +246,7 @@ File.foreach('testfile') {|x| print "GOT", x }
 
 # swift
 
-他的思路真奇葩, 并没有使用file句柄这种东西, 咋读, 取决于你要把文件读成啥, 真牛.
+他的思路真奇葩, 并没有使用file句柄这种东西, 咋读, 取决于你要把文件读成啥, 真牛.面向数据结构的swift 一切都回到了原点
 
 ```swift
 //nsstring
@@ -278,3 +278,14 @@ val fileContent = this::class.java.getResource("/html/file.html").readText()
 
 
 
+# 进入另一个领域 函数式functional
+
+### scheme
+
+golang
+
+haskell
+
+clojure
+
+erlang
