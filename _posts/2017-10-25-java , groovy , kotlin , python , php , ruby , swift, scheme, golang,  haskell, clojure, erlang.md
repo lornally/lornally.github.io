@@ -292,13 +292,13 @@ golang
 
 ```go
 package main
-import (
+import ( //这个意思就是包要手动管理了?
     "fmt"
     "io/ioutil"
 )
 func main() {
     b, err := ioutil.ReadFile("file.txt") // just pass the file name
-    if err != nil {
+    if err != nil { //这个意思就是错误要显示处理了?
         fmt.Print(err)
     }
     fmt.Println(b) // print the content as 'bytes'
@@ -346,17 +346,9 @@ erlang
 
 
 ```erlang
-readlines(FileName) ->
-    {ok, Device} = file:open(FileName, [read]),
-    try get_all_lines(Device)
-      after file:close(Device)
-    end.
-
-get_all_lines(Device) ->
-    case io:get_line(Device, "") of
-        eof  -> [];
-        Line -> Line ++ get_all_lines(Device)
-    end.
+file2lines(File) ->
+   {ok, Bin} = file:read_file(File),
+   string2lines(binary_to_list(bin), []).
 
 readlines(FileName) -> %一种
     {ok, Data} = file:read_file(FileName),
@@ -371,3 +363,27 @@ read(File) -> % line by line
     end.
 ```
 
+nodejs
+
+```js
+fs.readFile('/etc/passwd', function (err, data) { //异步
+  if (err) throw err;
+  console.log(data);
+});
+var text = fs.readFileSync('test.md','utf8') //同步
+console.log (text)
+```
+
+### 语言决定了你的思维方式
+
+- nodejs 异步非阻断
+- swift 数据驱动
+- scheme 一切都是函数
+- java 目录结构决定代码结构
+- groovy 闭包就是函数
+- python 代码结构决定逻辑结构
+- php 咋干都行
+- ruby 闭包干他 或者lambda被干
+- kotlin 一路...
+- clojure 命令行一样的scheme
+- erlang 大括号不是函数体
