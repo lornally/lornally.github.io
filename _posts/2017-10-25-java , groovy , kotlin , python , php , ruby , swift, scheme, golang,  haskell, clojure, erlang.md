@@ -138,7 +138,9 @@ int result = method(o); //结果是1, 因为是运行时判断o就是个string
 
 代码对比:
 
-```groovy
+java
+
+```java
 //java7 ARM 已经比之前手工关流简化了很多, 给之前类似的javaer默哀一下.
 Path file = Paths.get("/path/to/file");
 Charset charset = Charset.forName("UTF-8");
@@ -152,6 +154,20 @@ try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
     e.printStackTrace();
 }
 
+
+
+//据说还有这样神奇的写法
+import java.util.Scanner
+import java.io.File
+new Scanner(new File("file.txt")).useDelimiter("\\Z").next()
+
+Scanner fileIn = new Scanner(new File(thePathToYourFile));
+//然后其实还是麻烦, 要自己判断越界问题.  
+```
+
+groovy
+
+```groovy
 
 //groovy 闭包
 
@@ -269,11 +285,11 @@ let data = NSData.init(contentsOfFile: jsonPath!)
 > 冒号:后面还要写内容, 并且这一堆的[.]啊.
 
  ```kotlin
-val iString = File("koon.txt").inputStream().bufferedReader().use
-{  it.readText()  }
-println(inputString)
+val iStr = File("kon.txt").inputStream().bufferedReader().use
+{it.readText()}
+println(iStr)
 //另外一种方法
-val fileContent = this::class.java.getResource("/html/file.html").readText()
+val fiC = this::class.java.getResource("/he.html").readText()
  ```
 
 ### 进入另一个领域 函数式functional
@@ -374,6 +390,19 @@ var text = fs.readFileSync('test.md','utf8') //同步
 console.log (text)
 ```
 
+scala
+
+```scala
+//没关文件
+val lines = scala.io.Source.fromFile("file.txt").mkString
+
+//关文件的写法
+val source = scala.io.Source.fromFile("file.txt")
+val lines = try source.mkString finally source.close()
+```
+
+
+
 ### 语言决定了你的思维方式
 
 - nodejs 异步非阻断
@@ -387,3 +416,14 @@ console.log (text)
 - kotlin 一路...
 - clojure 命令行一样的scheme
 - erlang 大括号不是函数体
+
+
+
+### 我们应该涉猎的语言
+
+1. groovy 学习闭包
+2. python 文本处理相当优雅
+3. ruby 简洁 闭包和lambda可以随意切换, 理解他们其实是一样东西的两种写法.
+4. swift 数据结构驱动和多参数函数
+5. kotlin 静态的functional
+6. nodejs 异步非阻塞闭包调用
