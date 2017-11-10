@@ -427,3 +427,53 @@ val lines = try source.mkString finally source.close()
 4. swift 数据结构驱动和多参数函数
 5. kotlin 静态的functional
 6. nodejs 异步非阻塞闭包调用
+
+
+
+
+
+### 更多语言
+
+Facebook is trying something similar with languages [called Hack](https://www.wired.com/2014/03/facebook-hack/) and [D](https://www.wired.com/2014/07/d-programming-language/).
+
+Google is exploring this ground with Go. 
+
+Mozilla, maker of the Firefox web browser, is doing much the same with a language known as Rust.
+
+Lattner created something called Clang
+
+Light Table,  Light Table can do much the same thing—and do it with multiple languages, including Python, Clojure, and Javascript
+
+R和scheme一样是lisp衍生的
+
+### 排名
+
+- https://www.tiobe.com/tiobe-index// 
+- Stack Overflow Developer Survey
+  - https://insights.stackoverflow.com/survey/2016
+  - https://insights.stackoverflow.com/survey/2017
+
+rust
+
+f#
+
+react
+
+smalltalk
+
+typescript
+
+elixir
+
+julia
+
+dart
+
+CLU
+
+### 对比总结
+
+1. 无非lambda和闭包两种形式, 而且他们其实还是一回事, 是一个事物的两种描述.
+2. 代码生成是恶魔, 代码生成vs 编译器推断 vs 运行期解决. 
+3. 运行期解决依赖问题, 会导致代码运行比较慢.
+4. 只有编译器才是王道. markdown的路是最正确的路.
