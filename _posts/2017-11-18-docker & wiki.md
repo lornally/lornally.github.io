@@ -334,7 +334,7 @@ docker stop miki
 #然后使用加上了端口映射的这一句:
 docker run --name miki -p 8080:80 --link msql:mysql -d mediawiki 
 #然后docker说container重名了, 前面那个根本就不能用, 当然要移除. 咋移除呢?
-docker rm -f miki #这个益处了miki这个container. 
+docker rm -f miki #这个移除了miki这个container. 
 docker images #查看镜像
 docker rmi nginx #移除镜像nginx
 docker ps -a #能看到所有的container
