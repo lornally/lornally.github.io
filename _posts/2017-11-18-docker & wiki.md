@@ -397,5 +397,14 @@ docker run --name miki  --link msql:mysql  -p 8080:80  -v /Users/machangkun/Down
 
 ```
 
+### 更单纯的入门
 
+```sh
+docker run -it ubuntu /bin/bash
+# -i标志保证容器中STDIN是开启的持久的标准输入，-t标志为要创建的容器分配一个伪tty终端。新创建的容器才能提供一个交互式shell。
+docker run -itd ubuntu /bin/bash 
+# -d 就是后台运行deattach, stop之后还能start, 然后还能attach, 必须这个-d.
 
+#下面这行基本上啥都有了, 还可以加上--env变量
+docker run -itd  --name work -p 80:80 -p 3306:3306 -p 6379:6379 -p 27027 -p 3000:3000 -v ~/git根目录:/code centos /bin/bash
+```

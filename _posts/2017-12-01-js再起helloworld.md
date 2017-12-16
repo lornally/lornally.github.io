@@ -64,3 +64,10 @@
 ```
 
 > 顺便吐槽下, 每次看到的helloworld代码, 都是没有屌用也没有卵用的猜数游戏. 
+
+### 调试
+
+1. safari javascript console : 单行调试
+2. Safari Snippet Editor : 当做html调试
+3. 写个页面直接浏览器看效果.
+4. 写个js文件直接命令行: node xxx.js
