@@ -82,6 +82,37 @@ fs.createReadStream('file.json').pipe(request.put('http://mysite.com/obj.json'))
 request.get('http://google.com/img.png').pipe(request.put('http://mysite.com/img.png'))
 ```
 
+### log文件处理
+
+- 必须要分每一天的log
+
+```javascript
+const today = new Date().toJSON().slice(0,10) //拿到2017-08-11, 下面log文件.
+```
+
+- 文件的追加式写法, 直接write是覆盖
+
+```javascript
+fs.appendFile("./log/每天一个log"+today+".log","=这个参数是拼接的log文件内容="+body+"\n" , function(err) {/*这是回调函数.*/})
+```
+
+### request其实不简单
+
+他有n多参数, 能力爆表
+
+```javascript
+https://github.com/request/request#requestoptions-callback
+var request = require('request');
+
+var propertiesObject = { field1:'test1', field2:'test2' };
+
+request({url:url, qs:propertiesObject}, function(err, response, body) {
+  if(err) { console.log(err); return; }
+  console.log("Get response: " + response.statusCode);
+});
+	
+```
+
 
 
 ### 参考
