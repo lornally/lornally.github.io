@@ -102,7 +102,7 @@ response.blob().then(
 
 参考: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data
 
-### 第三放api
+### 第三方api
 
 看文档吧: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Third_party_APIs
 
