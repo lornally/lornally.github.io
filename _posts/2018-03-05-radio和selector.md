@@ -43,8 +43,32 @@ var rate_value = rates.rate.value;
 </script>
 ```
 
-- onclick对于radio来说, 如果用键盘操作, 那么可能会不响应, 因此还是应该用addEventListener('change', 
+- onclick对于radio来说, 如果用键盘操作, 那么可能会不响应, 因此还是应该用addEventListener('change') 
 - 如果是radio可以把事件放在外面的form上面: document.mainForm.onclick
+
+> 最终结论, 很不幸, onclick写法和双事件写法都不行, 唯一可行的是: 				tdcode.addEventListener('change',updateradio), 示例如下: 
+
+```html
+<td id='tdcode'><h5>编码选择</h5>
+    <input type="radio" name="code" id='code1' value="utf8" checked><label for="code1">utf8   </label>
+    <input type="radio" name="code" id='code2' value="GB18030"><label for="code2">GB18030</label>
+    <input type="radio" name="code" id='code3' value="EUC-CN"><label for="code3">EUC-CN    </label>
+    <input type="radio" name="code" id='code4' value="Big5"><label for="code4">Big5</label>
+</td>
+
+<script>
+const tdcode=document.getElementById("tdcode");
+tdcode.addEventListener('change',updateradio)
+</script>
+  
+
+下面这两种写法都是不被执行的:
+//tdcode.onchage = updateradio
+//tdcode.addEventListener('change, click',updateradio)
+//tdcode.addEventListener('change click',updateradio)
+```
+
+
 
 ###### 选中selector
 
