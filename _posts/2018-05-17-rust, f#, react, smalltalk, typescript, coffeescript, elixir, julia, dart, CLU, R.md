@@ -147,6 +147,53 @@ iex> File.read "hello"
 reduce(vcat,  map(readtable, filter(r"^trip_data", readdir())))
 ```
 
+###### dart
+
+```dart
+// 回调
+main() {
+  var config = new File("myfile.txt");
+  config.readAsLines(Encoding.ASCII).then(handleLines);
+}
+
+handleLines(List<String> lines) {
+  for (var l in lines) print(lines);
+}
+
+// 简洁
+var resource = new Resource('package:myapp/myfile.txt');
+var contents = await resource.loadAsString();
+print(contents);
+
+// 链式
+
+ new File(path)
+    .openRead()
+    .transform(UTF8.decoder)
+    .transform(new LineSplitter())
+    .forEach((l) => print('line: $l'));
+```
+
+###### clu
+
+```clu
+ complex_number = cluster is add, subtract, multiply, ...
+        rep = record [ real_part: real, imag_part: real ]
+        add = proc ... end add;
+        subtract = proc ... end subtract;
+        multiply = proc ... end multiply;
+        ...
+    end complex_number;
+```
+
+###### R
+
+```r
+dat = read.csv("spam.csv", header = TRUE)
+# 看着不像lisp了, 没关系下面就像了.
+df <- read.table("Downloads/ecoli.data")
+```
+
 
 
 #### 2017年的
