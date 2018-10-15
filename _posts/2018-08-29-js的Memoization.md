@@ -13,10 +13,10 @@ prototype的用处出现了,
      var fn = this;
      var cacheName = ... // create a unique property name
      return function() {
-       var key = serialize(arguments);
+       var key = serialize(arguments);  //把参数变成key, 一会儿检查这个key是否计算过
        var cache = this[cacheName] || this[cacheName] = {};
        return key in cache ? cache[key] :
-         cache[key] = fn.apply(this, arguments);
+         cache[key] = fn.apply(this, arguments); //这个fn就是下面的调用函数Bezier
      }
    }
    ```
@@ -24,7 +24,7 @@ prototype的用处出现了,
 2. 第二个用处: 不至于作为对象的function先执行
 
    ```js
-   Bezier.prototype.getLength = function() {
+   Bezier.prototype.getLength = function() { //这个bezier就是上面的fn
      var length = ... // expensive computation
      return length;
    }.memoize();
@@ -88,4 +88,42 @@ Bezier.prototype.getLength = function() {
 
 
 
-要研究的内容是: js的生命周期
+要研究的内容是: js的生命周期 参见后面的blog, 我最终发现js的生命周期没啥可以研究的.
+
+###### 改进
+
+然后, 之前的这些解决方案有三个问题
+
+1. 函数必须知道自己的名字, 也就是说每个函数都要再写一遍这个memory方法.
+2. 如果有参数, 那么还是需要类似一开始非function.prototype的方式, 因为要检查这一组参数是否计算过.
+3. 如果核心以来的私有参数有变化, 比如一个函数a可以设置参数给函数b使用, 那么函数b的memory就不能直接用上面的方法了.
+
+```js
+function Angle(radians) {this.setRadians(radians)}
+Angle.prototype.setRadians = function(radians) {
+  this.radians = radians;
+  this.getDegrees.reset();//为了更新增加了这个代码, framework对语法形成影响就在这里了.
+};
+Angle.prototype.getDegrees = function() {
+  return this.radians * 180 / Math.PI;
+}
+memoizeConstantMethod(Angle.prototype, 'getDegrees');
+
+function memoizeConstantMethod(object, property) { //这个就是通用的记忆函数
+  var f = object[property];
+  var mf = function() {
+    var value = f.call(this);
+    var kf = function(){return value};
+    kf.reset = reset;
+    object[property] = kf;
+    return value;
+  }
+  var reset = function() {
+    object[property] = mf;
+  }
+  mf.reset = reset;
+  reset();
+}
+```
+
+这个方案并不完美, 因为他打扰了正常的setRadians的写法, 这就属于那种改变了语法的framework. 
