@@ -33,21 +33,20 @@
 - document.getselection
 - Document.caretRangeFromPoint() 从光标位置拿到range.
 - MutationObserver, 这个事件监控dom树的修改.
-- execcommand应该有用, 看看是否有针对整行进行正则的做法.
+- execcommand应该有用, 看看是否有针对整行进行正则的做法. Todo.
 
+###### 
 
-
-> document也特别有用
-
-
+###### document
 
 ```js
 document.execCommand('insertHTML', false, '&#009') //在当前光标插入内容.
 document.createTextNode('哈哈哈哈'); //建一个纯文字节点(不含标签)
 document.caretRangeFromPoint(e.clientX, e.clientY); //拿到点, 可以插入内容的点.
+document.elementFromPoint(560,238) //这个结果是正确的.
 ```
 
-> range特别有用
+
 
 ###### 拿到一个range
 
@@ -63,9 +62,7 @@ let offset = range.startOffset;
 
 ```
 
-
-
-> element特别有用单独形成一个blog吧. https://developer.mozilla.org/zh-CN/docs/Web/API/Element
+###### element
 
 ###### 继承链
 
@@ -78,11 +75,30 @@ eventtarget <- node <- element <- htmlelement <- HTMLinputelement / HTMLimageele
   - 返回的是一个domrect(TextRectangle或 ClientRect 的别称), 
   - 包含top right bottom left
 
-```js
 
+
+###### selection 是关键: https://developer.mozilla.org/en-US/docs/Web/API/Selection
+
+```js
+var selection = documentOrShadowRootInstance.getSelection()  // 这样也就拿到了一个selection
+ Window.getSelection()  //更多的时候, 我们应该调用这个函数.
+anchornode //选择起点
+anchoroffset //起点偏移量
+focusnode //终点
+focusoffset
+iscollapsed //判断起点和终点是否重合. 也就是只有光标没有选择.
+containnode //判断node是否是当前选区的一部分.
 ```
 
+###### window
 
+代表dom运行的窗口, 一个tab就是一个窗口.  不适合放到document上面的属性都放在窗口上.
 
+- scroll 类的内容都在这个接口.
+- size类也在这里.
+- open和move也在这里.
+- 对我们而言selection是最重要的了.
 
+###### 从顶层看
 
+document和window是根本的interface.
