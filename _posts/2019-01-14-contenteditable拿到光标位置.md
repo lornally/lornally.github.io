@@ -19,6 +19,8 @@ dom有很多接口: https://developer.mozilla.org/en-US/docs/Web/API/Document_Ob
    2. selection.getrangat()
    3. range.endOffset
    4. Range.compareBoundaryPoints
+   5. range.selectnodecontent 把整个node内容都选择了. 也就是说从range可以拿到包含他的node.
+   6. range.startcontainer, endcontainer, commonancestorcontainer.
 3. element接口继承自node
    1. document.elementfrompoint()可以拿到point(光标)指向的element. 一般情况都是个node.
    2. innerhtml和style以及attribute都在这个接口
@@ -89,6 +91,14 @@ var preCaretRange = range.cloneRange();
 preCaretRange.selectNodeContents(element);
 preCaretRange.setEnd(range.endContainer, range.endOffset);
 caretOffset = preCaretRange.toString().length;
+
+
+range = document.createRange();//Create a range (a range is a like the selection but invisible)
+range.selectNodeContents(contentEditableElement);//Select the entire contents of the element with the range
+range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+selection = window.getSelection();//get the selection object (allows you to change selection)
+selection.removeAllRanges();//remove any selections already made
+selection.addRange(range);//make the range you have just created the visible selection
 ```
 
 ###### 设置光标
@@ -103,3 +113,18 @@ sel.removeAllRanges();
 sel.addRange(range);
 ```
 
+###### 针对chrome的特别提醒
+
+- Chrome does not show the caret in content-editable block elements without text content. 所以要用inline或者inline-block, 或者换成span.
+
+
+
+###### 最后的总结:
+
+- 两个关键api
+  - range
+  - selection
+- 三个辅助接口
+  - document
+  - window
+  - element
