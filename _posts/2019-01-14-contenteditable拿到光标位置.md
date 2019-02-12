@@ -30,6 +30,7 @@ dom有很多接口: https://developer.mozilla.org/en-US/docs/Web/API/Document_Ob
    6. Node.textContent 拿到文本内容, 这个和value一样, 对于element会返回空, 不过他确实能拿到所有文本内容. 考虑用这个做文档的save.
 4. caretposition是一个类似selection的接口.
    1. Document.caretPositionFromPoint(). 拿到element里面光标的具体位置.
+   2. 这个函数也是需要参数的, 需要一个point作为参数, 和caretRangeFromPoint一样.
 5. window和document
    1. window负责scroll
    2. document负责createelement
