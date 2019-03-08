@@ -1,5 +1,7 @@
 > 虽然之前看了不少内容, 但是, 最近艰难的再这个领域跋涉, 遇到很多问题, 进度太过喜人, 因此, 我们值得再次反思一下.
 
+### 第一部分 editable的善与恶
+
 ###### 参考mdn
 
 - https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content
@@ -7,7 +9,7 @@
 - caret-color
 
 - https://ckeditor.com/blog/ContentEditable-The-Good-the-Bad-and-the-Ugly/
-- 这个是我主要参考的资料
+- 本文章第一部分, 就围绕这个主题来写, 主要是上面这份文档的思路. 
 
 ###### 现状
 
@@ -59,7 +61,7 @@
   - https://lists.w3.org/Archives/Public/public-editing-tf/
   - http://w3c.github.io/editing/
   - https://www.w3.org/wiki/Editing_Taskforce
-- 作者的编辑器是: CKEditor, medium.com(不确定, 应该是)
+- 作者的编辑器是: CKEditor, medium.com(不是, medium编辑器和medium没关系)
 - 如果使用editable, 我们需要实现:
   - 回车
   - 各种类似execcommand的指令
@@ -73,6 +75,8 @@
 - 这其实意味着, 编辑器不要求浏览器做任何事, 除了帮助handle用户输入之外, 任何事都不依赖浏览器以及contenteditable.
 - 作者也发现DOM作为基础结构也很有问题.
 
+最后附上作者大名: Piotr Koszuliński   CKEditor 5 Lead Developer
+
 
 
 
@@ -82,3 +86,62 @@
 - <https://github.com/atom/xray>
 - https://github.com/xi-editor/xi-editor
 - 这两个都是rust写的: https://en.wikipedia.org/wiki/Rust_(programming_language)
+
+### 第二部分 w3c的对策
+
+- 主要参考: http://w3c.github.io/editing/
+- 编辑器组: <https://lists.w3.org/Archives/Public/public-editing-tf/>
+- 编辑器组的入口: https://www.w3.org/wiki/Editing_Taskforce
+
+w3c成立这么一个组织. 用来改进editable. 这个组织里面都是领域的大神.  大神们的改进策略:
+
+- editable只是用来采集用户输入, 其他附加的事少干. 
+
+目前的问题:
+
+1. editable太过复杂, 并且充满bug.  准备通过规定好表现来解决. 
+2. editable不容易适应编辑场景(剧本)的多样化. 专门有个列表展示现在不支持的编辑方式.
+
+### 第三部分 w3c的规范
+
+http://w3c.github.io/editing/contentEditable.html
+
+这个要有空再看了. 而且确实需要细看
+
+
+
+### 第四部分 原作者的另一个blog
+
+- https://medium.com/content-uneditable/fixing-contenteditable-1a9a5073c35d
+
+- 原文非常通俗易懂,  我就不翻译了.
+
+列一点核心观点:
+
+1. 关键字: contentEditable=’minimal’
+2. selection api很关键, 并且需要完善.
+3. contentEditable=’minimal’进化了一群小弟: *contentEditable=typing*, *contentEditable=cursor* , *contentEditable=events* 
+4. 特别介绍了这个: *ContentEditable=events* 这个模式下, 浏览器不会改变dom.
+
+
+
+### 第五部分  editable的罪与罚
+
+1. 我的读书笔记: 2019-01-09-medium为什么editable是泰瑞宝, 
+2. 原文: https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480
+3. 作者声明了两件事: 
+   1. medium-editor和medium没关系.
+   2. 他推崇的是prose-mirror.
+4. 作者是chrome的作者之一.
+
+> 最后再顺便吐槽一下, 为毛中文就没有有用的信息呢? 
+
+### 附录 各个editable编辑器的实现方式
+
+1. Codemirror1 用的iframe designmode/contenteditable
+2. Codemirror6 用的pre  contenteditable
+3. ckeditor 4 用的iframe->body contenteditable
+4. ckeditor 5直接用div了 contenteditable
+5. tinymce用的iframe->body contenteditable
+6. prosemirror 用的div, 回车处理为p + br
+

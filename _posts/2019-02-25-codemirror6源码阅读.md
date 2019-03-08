@@ -1,3 +1,15 @@
+###### 0227重大补充
+
+才发现, codemirror6用的是pre, 他再pre上面设置了contenteditable!!!!!!
+
+```html
+<pre class="CodeMirror-content" contenteditable="true" spellcheck="false" style="margin: 0px; flex-grow: 2; min-height: 100%;"><div><span class="cm-string">"use strict"</span>;</div><div><span class="cm-keyword">const</span> {<span class="cm-def">readFile</span>} <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">"fs"</span>);</div><div><br></div><div><span class="cm-variable">readFile</span>(<span class="cm-string">"package.json"</span>, <span class="cm-string">"utf8"</span>, (<span class="cm-def">err</span>, <span class="cm-def">data</span>) <span class="cm-operator">=&gt;</span> {</div><div>  <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">data</span>);</div><div>});</div><div><span class="cm-variable">zz</span><span class="cm-string">'hz'</span><span class="cm-variable">hozhong</span><span class="cm-string">'wzhong'</span><span class="cm-variable">wezhong</span><span class="cm-string">'wen中文</span></div><div><span class="cm-variable">cce</span><span class="cm-string">'sce'</span><span class="cm-variable">shce</span><span class="cm-string">'shi测试</span></div></pre>
+```
+
+其实, 在这里, 我无法理解的是为啥不用:  contentEditable=’minimal’ , 作者明明也在w3c的editing组里面.
+
+##### 0225原始内容
+
 > 之前阅读了一下下, 发现typescript阅读不下去. 今天决定续上.
 
 ###### ts入门
