@@ -23,10 +23,16 @@ git branch --remote
 
 ```sh
 gcb #缩写, 以当前分支为基础创建新的分支, 并且切换过去.
-git checkout -b #本尊
+
+#简单版的操作, 一步顶两步.
+git checkout -b dev#本尊
+
 #上面的操作等于下面两步:
 git branch dev #这个不是切换分支, 这个是创建分支dev
 gco dev #切换到dev分支.
+
+#新分支beta推送到远程源origin
+ gp origin beta
 ```
 
 > 如果新建的分支远程没有, 那么可以直接往远程推, 就会推上去一个同名分支.
