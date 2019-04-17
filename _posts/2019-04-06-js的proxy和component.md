@@ -22,6 +22,7 @@ let p = new Proxy(target, handler);
 
 - 可以拆分属性的判断.  测试环境有用.
 - 可以用作缓存各种计算结果. 在路径计算之中应该有用. 仔细看这个例子并不对, 之前的计算并没有用上. 还是要用memoization, 话说, 是否能用es6重写memorization呢? 这个貌似是可以的,  而且真的可以, 这样就完美的避免了框架对语法的影响, 把框架降级为包了.
+- 比如memorization的方案, 之前的好方案会造成framework, 会干扰正常的大计算消耗函数的写法. 用了defineproperty或者proxy, 就完全没有这个问题了. 对外暴露接口就可以把proxy暴露出去.
 
 
 

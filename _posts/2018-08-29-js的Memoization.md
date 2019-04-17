@@ -127,3 +127,7 @@ function memoizeConstantMethod(object, property) { //这个就是通用的记忆
 ```
 
 这个方案并不完美, 因为他打扰了正常的setRadians的写法, 这就属于那种改变了语法的framework. 
+
+###### 2019-04-10 更新
+
+其实可以用包的写法解决, es6的object.defineproperty和proxy都可以解决这个问题, 完全不打扰angle的正常写法, angle完全不需要知道有memoize这种东西. 嘿嘿, 完美的解决方案是存在的. 
