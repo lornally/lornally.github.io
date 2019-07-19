@@ -1,4 +1,4 @@
-### observer 
+### observer
 
 - https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 - object.observer已经是被淘汰的接口, 目前的建议是: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
