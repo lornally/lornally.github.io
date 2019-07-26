@@ -129,7 +129,7 @@ http://w3c.github.io/editing/contentEditable.html
 
 1. 我的读书笔记: 2019-01-09-medium为什么editable是泰瑞宝, 
 2. 原文: https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480
-3. 作者声明了两件事: 
+3. 作者声明了两件事:  很神奇, 再次阅读时没有下面两点了, 并且原文中的插图也都不见了. 我陷入了深深的思索.
    1. medium-editor和medium没关系.
    2. 他推崇的是prose-mirror.
 4. 作者是chrome的作者之一.
