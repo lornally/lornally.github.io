@@ -286,12 +286,12 @@ function CodeMirror(place, options) {
 通过跟踪代码, 我知道了.
 
 ```js
-//再jstest.html里面:
+//在jstest.html里面:
 var editor = new MirrorFrame(CodeMirror.replace(textarea), {;//...
                                                            })
 //这里第一个参数CodeMirror.replace(textarea)确实是一个函数
 
-//然后再MirrorFrame里面, 这个函数得到了调用
+//然后在MirrorFrame里面, 这个函数得到了调用
 function MirrorFrame(place, options) { //第二个参数只是给codemirror使用.
   this.home = document.createElement("div");
   if (place.appendChild) //place是第一个参数, 是codemirror给过来的. 现在去看看codemirror.

@@ -45,7 +45,7 @@
 
 3. 然后上面这个问题被我绕过去了, 在elements里面, 找到event listen, 选择blocking, 这样事件都会被跟踪.
 
-4. 跟踪的过程中发现select.js是关键, 作者再这里实现了光标的各种操作.
+4. 跟踪的过程中发现select.js是关键, 作者在这里实现了光标的各种操作.
 
 5. 实际的dom操作在文件尾部的highlight方法中实际执行.
 
@@ -89,6 +89,7 @@
    16 抛出异常
    
    最终结论: 这些异常抛出其实也是可以不注释掉的.
+   是因为勾选了pause on excptions(在source面板的右边执行按钮下面)
    ```
 
 ###### 代码分析
@@ -513,3 +514,19 @@ select.selectMarked = function () {
   - 格式化一个span, 加入文本内容, 插入
   - 删除原本的文本内容
   - 更新光标
+
+###### 附录
+
+- codemirror.js  676 lines
+- editor.js  1674 lines
+- highlight.js 70 lines
+- mirrorframe.js 83 lines
+- parsecss.js 163 lines
+- parsejavascript.js 361 lines
+- select.js 435 lines
+- stringstream.js 160 lines
+- Tokenize.js 58 lines
+- tokenizejavascript.js 175 lines
+- undo.js 414 lines
+- Unittests.js 44 Lines
+- Util.js 163 Lines
