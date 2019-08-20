@@ -1,0 +1,29 @@
+###### 主要参考这几篇文章, 他们写的非常好
+
+- https://medium.engineering/why-contenteditable-is-terrible-122d8a40e480
+  - 这一篇优秀之处不仅仅是描述了contenteditable的缺点, 而且对于编辑器的dom的本质有一个特别明确的描述. 作者对于编辑器的dom的本质有非常深入的思考. 很值得学习.
+- https://ckeditor.com/blog/ContentEditable-The-Good-the-Bad-and-the-Ugly/
+  - 作者不仅仅描述了contenteditable的优缺点, 而且描述了编辑器作者的无奈, contenteditable是唯一的解决方案, 因此我们必须忍受并且改进它. 非常令人敬佩. 
+- https://medium.com/content-uneditable/fixing-contenteditable-1a9a5073c35d
+  - 作者描述了对于contenteditable的改进建议, 作者并不仅仅是空谈, 他明确的的提交了w3c的提案. 并且在他自己的编辑器中, 他们真的构建了一个干净的contenteditable.
+- https://medium.com/content-uneditable/lessons-learned-from-creating-a-rich-text-editor-with-real-time-collaboration-c35870046987
+  - 这里就是描述了那个干净的编辑器:) 它是一个协同编辑器. 他对协同做了相当深入的讨论.
+  - 他们用了OT, 这个很作死啊.
+  - 他们相拥线性扁平的数据结构, 但是难于处理: 表格, 带标题的图片, 列表里面有块内容的情况. 简单的说所有的块级嵌套都难于处理.
+  - 他们用OT处理树结构, 搞了3年, 做出了出色的成果(?)
+  - 扁平数据只需要三个op: 添加, 删除, 修改描述(比如改样式).
+  - tree需要增加4个op:
+    - rename 改变元素的类型, 比如从段落改为标题或者列表.
+    - split, merge, wrap, unwrap
+    - insert text, 这个主要是区分添加文本内容和添加元素.
+    - 顺便还引入了一个marker操作.
+  - 他们使用了数据抽象, 基础的操作都在基础数据上. 
+- https://florian.rivoal.net/blog/2016/12/content-editable-is-a-scary-place/
+  - 第一步就是取消浏览器对于editable的默认行为.
+  - 第二步作者提出了很多不同的editable的类型, 改变浏览器的默认行为的范围.
+- 另外, 推荐阅读codemirror/prosemirror的文档, 作者描述了他的苦痛.
+  - code1是editable, 但是, 被坑死了.  有2篇文档. 
+  - code2-5抛弃了editable, 但是, 他有迈不过去的问题. 这里同样偶2篇文档
+  - prose改回了editable, 作者发现问题似乎不存在了(感谢微软挥刀自宫). 这里依旧是2篇文档.
+  - code6也决定回归editable. 这里没有文档. 但是我们可以期待.
+  - 顺便说一句, 我的blog里面有详细的阅读笔记. 
