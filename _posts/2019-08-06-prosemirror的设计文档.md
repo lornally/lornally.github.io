@@ -65,3 +65,8 @@ prosemirror的文档模型就是markdown, 未来可以扩展.
 - 让大家从富文本迁移出来, 迁移到清除了无用复杂的html的编辑器.
 - 提供一个真正的协同工作的编辑器.  超越google docs的体验的编辑器.
 
+###### 官方的有意义的文档
+
+- https://prosemirror.net/docs/guide/
+- https://prosemirror.net/docs/ref/
+

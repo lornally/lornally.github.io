@@ -100,12 +100,11 @@ crdt对CAP形成重大影响: https://www.infoq.cn/article/cap-twelve-years-late
 
 
 
-
-
-
-
 ###### prosemirror的角度
 
-
+- 参考http://marijnhaverbeke.nl/blog/collaborative-editing.html
+- 作者使用了一点OT, 但是也发现了OT的问题, 因此, 大部分是作者自己的解决方案. 难为marijn了.
+- 作者基于事实得出一个结论, 很多时候与其OT不如用git diff更合理. 因为, 自动merge出来的很可能是垃圾.
+- 关于undo, 作者认为不该维护一个公用的history, 应该每个人维护自己的. 
 
 ###### 
