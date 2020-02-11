@@ -21,7 +21,9 @@ launch.json
 - 必须先看官方文档, 简历基础的感知, 官方文档很明确, ts的类型是为了接口定义而做的.
 
   - https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
-  - 
+  - 概览  https://code.visualstudio.com/docs/typescript/typescript-tutorial
+  - 编译  https://code.visualstudio.com/docs/typescript/typescript-compiling
+  - 调试  https://code.visualstudio.com/docs/typescript/typescript-debugging
 - https://ts.xcatliu.com/basics/type-assertion
 
   - 前面讲的简单清晰明了.
