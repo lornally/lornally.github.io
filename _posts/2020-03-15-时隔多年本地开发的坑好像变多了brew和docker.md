@@ -123,7 +123,7 @@ export ALL_PROXY=socks5://127.0.0.1:1080
 unset ALL_PROXY
 ```
 
-######  如果这么夏姬八乱时, 那么会出现下面的bug
+######  如果这么夏姬八乱试, 那么会出现下面的bug
 
 1. 此时会出现bug: Could not resolve host 127.0.0.1
 
@@ -141,7 +141,7 @@ unset ALL_PROXY
 1. docker toolbox 这个是啥?  还有一个概念docker-machine //todo
 2. docker ->preferences->deamon->registry mirrors-> apply &restart  这个找不到了, 是我的docker太新了吗? 
 
-总是上面两个都没成功. 
+总之上面两个都没成功. 
 
 ```sh
 sudo echo  '{
@@ -150,7 +150,7 @@ sudo echo  '{
 
 ```
 
-fuck 哦, 官方文档坑死人, 阿里云和docker携手坑人ヽ(｀⌒´)ﾉ, 官方文档的位置不在etc/docker. 
+fuck 哦, 官方文档坑死人, 阿里云和docker携手坑人ヽ(｀⌒´)ﾉ, 配置的位置其实不在etc/docker. 
 
 - 坑货一: https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
 - 坑货二:https://docs.docker.com/docker-for-mac/
