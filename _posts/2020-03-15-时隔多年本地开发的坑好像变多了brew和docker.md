@@ -6,6 +6,53 @@
 
 ### 先说brew
 
+1. 终审判决 ⁽⁽ଘ(ˊᵕˋ)ଓ⁾⁾*
+1. 不要用国内的源, 任何一个都不要用, 神烦. 
+2. 最佳方式是给zsh加几个命令. 用的时候代理上.
+
+   ```sh
+   code ~/.zshrc 
+   #加入如下内容:
+   alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
+   alias unsetproxy="unset ALL_PROXY"
+   alias ip="curl cip.cc"
+   ```
+
+- 有一个很好的参考: https://mashaz.github.io/2017/08/07/all-socks5/
+
+
+### brew蹲完docker蹲🧘‍♀️（︶︿︶）
+
+- 这个好像可以直接拉. 很慢. 后面试试打开代理.
+- 阿里云有"镜像加速器": https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
+- 每个人登录查看, 我的加速器是: https://a5hmunh5.mirror.aliyuncs.com
+
+```sh
+ls ~/.docker
+code  ~/.docker/daemon.json #录入下面的内容, touch, cat, echo, vi/nano/mate
+```
+
+还是Stack Overflow靠谱: https://stackoverflow.com/questions/38785991/docker-deamon-config-path-under-mac-os
+
+```json
+{
+  "registry-mirrors": ["https://a5hmunh5.mirror.aliyuncs.com"] 
+}//娘惹, 真的需要这个中括号 彡(-_-;)彡
+```
+
+重启docker
+
+> 终于成功了, 速度飞起:)     ヽ(ﾟ∀ﾟ)ﾒ(ﾟ∀ﾟ)ﾉ  ✌️   ﾍ|･∀･|ﾉ*~● ✌️   (●´∀｀●)ﾉ  ✌️ (＾－＾)V
+>
+> 我容易吗? 2个小时了.......  
+
+新建文件参考了: 
+
+- https://isister.cc/posts/Create-File-In-Linux/
+- https://linuxhandbook.com/create-file-linux/
+
+###### brew曲折的进程: 
+
 1. brew啥都装不上, 各种缓慢
 
 ```sh
@@ -76,21 +123,9 @@ export ALL_PROXY=socks5://127.0.0.1:1080
 unset ALL_PROXY
 ```
 
-###### 终审判决 ⁽⁽ଘ(ˊᵕˋ)ଓ⁾⁾*
+######  如果这么夏姬八乱时, 那么会出现下面的bug
 
-1. 不要用国内的源, 任何一个都不要用, 神烦. 
-
-2. 最佳方式是给zsh加几个命令. 用的时候代理上.
-
-   ```sh
-   code ~/.zshrc 
-   #加入如下内容:
-   alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
-   alias unsetproxy="unset ALL_PROXY"
-   alias ip="curl cip.cc"
-   ```
-
-3. 此时会出现bug: Could not resolve host 127.0.0.1
+1. 此时会出现bug: Could not resolve host 127.0.0.1
 
    ```sh
    #原因是因为配置了~/.curlrc, 简单的删除就可以了, 并且原本的配置也是不对的. 
@@ -98,17 +133,10 @@ unset ALL_PROXY
    socks5 = "127.0.0.1:1080" #这个正确, 但是用了前面的方法就不要用这个了. 注意: 这里只能用双银行不能用单引号, 尤其要避免智能配对引号.
    ```
 
-4. 有一个很好的参考: https://mashaz.github.io/2017/08/07/all-socks5/
 
+###### docker的曲折
 
-
-### brew蹲完docker蹲🧘‍♀️（︶︿︶）
-
-- 这个好像可以直接拉. 很慢. 后面试试打开代理.
-- 阿里云有"镜像加速器": https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
-- 每个人登录查看, 我的加速器是: https://a5hmunh5.mirror.aliyuncs.com
-
-两种配置方式:
+官方的坑人的两种配置方式:
 
 1. docker toolbox 这个是啥?  还有一个概念docker-machine //todo
 2. docker ->preferences->deamon->registry mirrors-> apply &restart  这个找不到了, 是我的docker太新了吗? 
@@ -126,27 +154,3 @@ fuck 哦, 官方文档坑死人, 阿里云和docker携手坑人ヽ(｀⌒´)ﾉ,
 
 - 坑货一: https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
 - 坑货二:https://docs.docker.com/docker-for-mac/
-
-```sh
-ls ~/.docker
-code  ~/.docker/daemon.json #录入下面的内容, touch, cat, echo, vi/nano/mate
-```
-
-还是Stack Overflow靠谱: https://stackoverflow.com/questions/38785991/docker-deamon-config-path-under-mac-os
-
-```json
-{
-  "registry-mirrors": ["https://a5hmunh5.mirror.aliyuncs.com"] 
-}//娘惹, 真的需要这个中括号 彡(-_-;)彡
-```
-
-重启docker
-
-> 终于成功了, 速度飞起:)     ヽ(ﾟ∀ﾟ)ﾒ(ﾟ∀ﾟ)ﾉ  ✌️   ﾍ|･∀･|ﾉ*~● ✌️   (●´∀｀●)ﾉ  ✌️ (＾－＾)V
->
-> 我容易吗? 2个小时了.......  
-
-新建文件参考了: 
-
-- https://isister.cc/posts/Create-File-In-Linux/
-- https://linuxhandbook.com/create-file-linux/
