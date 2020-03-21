@@ -86,6 +86,7 @@ $ docker run --name mysql5 -d -p 3305:3306 -v /Volumes/wd4black/mysql -e MYSQL_R
 - 还有案例, 依照之前chrome extension的经验案例恐怕是最重要的.
   - https://docs.docker.com/samples/
   - https://github.com/docker/labs/tree/master/developer-tools/java/
+  - https://github.com/play-with-docker/play-with-docker.github.io
 - 思路
   - 应该不是从Ubuntu开始.而是从java开始.
 
