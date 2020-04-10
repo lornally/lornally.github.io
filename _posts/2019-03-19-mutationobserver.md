@@ -12,7 +12,7 @@
 - https://developers.google.com/web/tools/chrome-devtools/
 - element这边右键可以选择break on, 然后相关事件发生就会被break, 
   - 这个是发生在mutationobserver
-  - 这个会显示再devtools->elements->dom breakpoints
+  - 这个会显示在devtools->elements->dom breakpoints
 - source那边也可以针对某个event进行breakpoints
 
 ###### 核心目标:

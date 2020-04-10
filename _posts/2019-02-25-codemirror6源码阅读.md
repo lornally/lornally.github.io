@@ -1,6 +1,6 @@
 ###### 0227重大补充
 
-才发现, codemirror6用的是pre, 他再pre上面设置了contenteditable!!!!!!
+才发现, codemirror6用的是pre, 他在pre上面设置了contenteditable!!!!!!
 
 ```html
 <pre class="CodeMirror-content" contenteditable="true" spellcheck="false" style="margin: 0px; flex-grow: 2; min-height: 100%;"><div><span class="cm-string">"use strict"</span>;</div><div><span class="cm-keyword">const</span> {<span class="cm-def">readFile</span>} <span class="cm-operator">=</span> <span class="cm-variable">require</span>(<span class="cm-string">"fs"</span>);</div><div><br></div><div><span class="cm-variable">readFile</span>(<span class="cm-string">"package.json"</span>, <span class="cm-string">"utf8"</span>, (<span class="cm-def">err</span>, <span class="cm-def">data</span>) <span class="cm-operator">=&gt;</span> {</div><div>  <span class="cm-variable">console</span>.<span class="cm-property">log</span>(<span class="cm-variable-2">data</span>);</div><div>});</div><div><span class="cm-variable">zz</span><span class="cm-string">'hz'</span><span class="cm-variable">hozhong</span><span class="cm-string">'wzhong'</span><span class="cm-variable">wezhong</span><span class="cm-string">'wen中文</span></div><div><span class="cm-variable">cce</span><span class="cm-string">'sce'</span><span class="cm-variable">shce</span><span class="cm-string">'shi测试</span></div></pre>
@@ -16,7 +16,7 @@
 
 - https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 - 这个tsc之后, vs code就开始给我报错. 奶奶的.
-- 在我看来ts真正的用处在于: 可以再接口定义上面发力, 解决js构建大型系统的架构设计问题的一部分.
+- 在我看来ts真正的用处在于: 在接口定义上面发力, 解决js构建大型系统的架构设计问题的一部分.
 - node的用处在于, 他引入了module的概念, 让js真的有可能构建大型系统.
 
 举个例子

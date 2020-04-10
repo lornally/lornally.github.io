@@ -32,7 +32,7 @@ enentName一共也没有多少:
 基础概念
 
 - capture 是第三个参数
-  - true是再捕获(下沉)阶段生效
+  - true是在捕获(下沉)阶段生效
   - false是在冒泡阶段生效
 - 打断事件链:  e.stopPropagation()
 - 如果要阻止html默认动作: preventDefault

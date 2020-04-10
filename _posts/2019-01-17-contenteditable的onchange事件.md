@@ -74,7 +74,7 @@ var config = {
 不是的, 其实是葫芦娃七兄弟: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserverInit
 
 - 文档藏得太深了. 
-- At a minimum, one of `childList`, `attributes`, and/or `characterData` must be `true`when you call [`observe()`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe). Otherwise, a `TypeError` exception will be thrown. 这话的意思是childlist, attributes, characterdata必须有一个再监控列表, 不然就会抛出typeerror异常.
+- At a minimum, one of `childList`, `attributes`, and/or `characterData` must be `true`when you call [`observe()`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe). Otherwise, a `TypeError` exception will be thrown. 这话的意思是childlist, attributes, characterdata必须有一个在监控列表, 不然就会抛出typeerror异常.
 - MutationObserverInit 是个字典, 7个葫芦娃都定义再这里.
 - 参考这份文档: https://davidwalsh.name/mutationobserver-api
 

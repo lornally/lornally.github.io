@@ -30,7 +30,7 @@
   },false);
   ```
 
-- 再myfield的光标处插入myvalue
+- 在myfield的光标处插入myvalue
 
   ```js
   var startPos = myField.selectionStart;
