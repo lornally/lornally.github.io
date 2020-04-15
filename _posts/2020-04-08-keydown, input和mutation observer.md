@@ -114,3 +114,10 @@ observer.observe(diveditor, config);
 ###### element
 
 继承链: eventtarget <- node <- element <- htmlelement <- HTMLinputelement / HTMLimageelement.
+
+###### todo 待了解内容
+
+- mutation observers
+  - 这个需要缓存选择 preserving selection
+  - 或许还需要处理undo manager
+- clipboard api
