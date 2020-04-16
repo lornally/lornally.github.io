@@ -51,6 +51,8 @@ code  ~/.docker/daemon.json #录入下面的内容, touch, cat, echo, vi/nano/ma
 - https://isister.cc/posts/Create-File-In-Linux/
 - https://linuxhandbook.com/create-file-linux/
 
+### 附录
+
 ###### brew曲折的进程: 
 
 1. brew啥都装不上, 各种缓慢
