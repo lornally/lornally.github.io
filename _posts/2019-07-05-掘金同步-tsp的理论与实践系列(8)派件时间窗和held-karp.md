@@ -124,8 +124,6 @@
       - 反正都要indexof, 不如就用array吧.
     - 不包含的key
 
-
-
 ```
 function algorithm TSP (G, n)
   for k := 2 to n do
