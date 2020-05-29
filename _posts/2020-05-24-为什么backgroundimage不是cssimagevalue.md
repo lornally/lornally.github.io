@@ -26,3 +26,29 @@ btw, I didnot want to build a new image tag with the background image's url. ple
 ### 震惊
 
 神奇的事情出现了, 竟然忽然就好了, 返回的就是cssimagevalue了. 也就是说: chrome 修了一个bug?
+
+
+
+
+
+last update, finally, i  found out the truth, because there are more than one value with background-image:
+
+```css
+background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("http://localhost:8080/icons/we-flow.png"); //here is cssstylevalue
+
+background-image: url("http://localhost:8080/icons/we-flow.png"); //here is cssimagevalue
+```
+
+
+
+
+
+---
+now 5.29 2020 the bug back, chrome  83.0.4103.61, 
+now it is cssstylevalue not cssimagevalue who know why?
+
+-----
+
+now 5.26 2020, @Kaiido find chrome fix this bug, now, we can get cssimagevalue :
+
+    var img=element.computedStyleMap().get('background-image')
