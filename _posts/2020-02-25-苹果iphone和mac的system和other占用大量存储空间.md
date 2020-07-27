@@ -5,7 +5,19 @@
 - 之前版本的系统是system巨大.
 - ios13里面, other占据了40G+, macos10.15catalina的other占据了20G+
 
-解决
+###### 精华
+
+mac
+
+- 用trend的cleaner one.
+- 最大的还是iphone备份, 把这个删了就有空间了.
+
+iphone
+
+- 给iphone做一个备份, 再restore iphone
+- 如果没啥问题, 过两天记得删除这个备份, 这些本地备份相当占据存储空间.
+
+###### 解决之路:
 
 ###### iphone的other巨大问题
 
