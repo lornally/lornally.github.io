@@ -46,8 +46,7 @@ name: don/t 别㲌
 # baseurl: ''
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "" # 一个空的字符串代表项目中所有的文件
       type: "posts" # 以前的 `post`， 在 Jekyll 2.2 里。
     values:
