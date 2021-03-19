@@ -1,4 +1,6 @@
 > 苹果的各种link, Symlink, Alias, Shortcut softlink, hardlink, firmlink
+>
+> 对应的中文也很混乱: 软链接, 硬链接, 符号链接, 快捷方式, 替身
 
 - alias 古老, 强大, 方便, 他实际上是一个小的描述文件
   - 强大之处: 包含源文件的inode name

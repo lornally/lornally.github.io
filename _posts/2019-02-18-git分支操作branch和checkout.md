@@ -73,3 +73,11 @@ grb #默认是去远程origin的对应分支.
 ###### 错误的分支做了commit
 
 参考: 2020-02-07-git中reset和pushf真的有用
+
+###### 删除分支
+
+```sh
+gb -d dev # 删除本地分支dev
+git push origin --delete <BranchName> #删除远程分支
+```
+
