@@ -30,3 +30,8 @@ mate /Users/machangkun/.jupyter/jupyter_notebook_config.py
 
 
 ### python 和 anaconda的shortcuts
+
+- https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf
+- https://know.continuum.io/rs/387-XNW-688/images/conda-cheatsheet.pdf
+- https://docs.anaconda.com/anaconda/user-guide/cheatsheet/
+- https://www.pythoncheatsheet.org/
