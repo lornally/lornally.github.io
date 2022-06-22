@@ -70,3 +70,4 @@ pkill -f SCIM.app
 ### 此时, 需要处理一下icloud问题
 1. 有了一个思路, 关掉icloud, 但是, 保留文件, 貌似上传有效
 2. icloud 依旧在疯狂上传
+
