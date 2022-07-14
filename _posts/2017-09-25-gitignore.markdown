@@ -99,7 +99,7 @@ git rm -r --cached filename  #把filename移除
 
 
 
-### 进阶学习: 
+### 进阶学习:
 
 > http://gwiki.cn/2016/07/git忽略ignore
 
