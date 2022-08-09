@@ -9,10 +9,7 @@
 
 ```python
 
-
 # 获得nan
-
-
 float('nan')  
 # 如果用了numpy
 np.nan
