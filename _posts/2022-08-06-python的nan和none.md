@@ -2,10 +2,10 @@
 
 
 
-
+### nan
 1. nan不是一个关键字, 因此不能直接用
 2. nan有很特殊的性质, 很多时候可以利用这些性质来判断
-3. None虽然是关键字, 但是并不可以参与运算
+3. nan属于true
 
 ```python
 
@@ -29,4 +29,27 @@ float('nan') != float('nan')
 numpy.isnan(number)
 math.isnan(x)
 
+# nan 属于true
+print('nan is true') if float('nan') else print('nan is false')
+
+```
+### none
+1. none是一个关键字
+2. none不能参与任何运算
+3. 任何值都不可能是none, 除非你手动赋值他是none
+4. 字典不存在的key, 可以得到value: none
+5. "false" values include False, None, 0 and []
+```python
+# 得到none
+d = {}
+print(d.get('xx'))
+
+# is 判断
+float('nan')  is None
+None is None
+
+# == 判断
+None == None # true
+'' == None # false
+float('nan') != float('nan') # true
 ```
