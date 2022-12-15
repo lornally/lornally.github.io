@@ -10,6 +10,10 @@
 - 在setting里面, spotlight的排除目录, 全部排除, 再全部拉回来, 这个世界清净了
 - 依旧没有清净, 考虑重装系统
 
+### 最终mac回归了
+
+- 他的表现像是20年前的windows, 重装解决一切问题, fuck
+
 ### log
 
 - 重启corespotlightd, 在activity monitor
