@@ -21,7 +21,7 @@ open ~/.jupyter
 jupyter notebook --generate-config
 
 # 编辑
-mate /Users/machangkun/.jupyter/jupyter_notebook_config.py
+mate ~/.jupyter/jupyter_notebook_config.py
 # 为了保持灵活性, 暂时不配置默认目录, 因为, 这样的话某个目录执行notebook就不是那么方便了
 
 ```
