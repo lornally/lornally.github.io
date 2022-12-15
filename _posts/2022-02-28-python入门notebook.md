@@ -35,3 +35,8 @@ mate /Users/machangkun/.jupyter/jupyter_notebook_config.py
 - https://know.continuum.io/rs/387-XNW-688/images/conda-cheatsheet.pdf
 - https://docs.anaconda.com/anaconda/user-guide/cheatsheet/
 - https://www.pythoncheatsheet.org/
+
+### 配置缩进
+
+- 编辑文件: ~/.jupyter/nbconfig/notebook.json
+
