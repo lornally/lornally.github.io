@@ -7,8 +7,9 @@
 ```python
 # 如果只是ascII字符可以用这个: 
 import json
-with open('data.json', 'w') as f:
-    json.dump(data, f)
+with open('dist/zvd.json', 'w') as f:
+  # ! 注意此处不需要./dist/zvd.json, 只需dist/就代表当前目录下的dist目录
+    json.dump(vd, f)
 
 # 如果有中文或者其他非ascII字符, 用这个: 
 with open('orderdata20220811.json', 'w',  encoding='utf-8') as f:
