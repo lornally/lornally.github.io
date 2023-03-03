@@ -1,3 +1,39 @@
+# 要点 -- 2023.2.22
+
+## 配置
+
+```json
+// vscode配置一个launch.json
+{"version": "0.2.0",
+ "configurations": [{
+   "type": "node",
+   "request": "launch",
+   "name": "Launch Program",
+   "skipFiles": [
+    "<node_internals>/**"
+   ],
+   "program": "${file}", // 当前文件
+   "outFiles": [ "${workspaceFolder}/dist/cmd/*.js"], // 核心配置 
+   "runtimeArgs": ["--experimental-modules"] //核心配置是这一句 
+ }]}
+```
+
+## 运行
+
+```sh
+# package.json 配置这个
+"scripts": {
+    "watch": "webpack --watch ",
+# terminal执行这个
+yarn watch
+```
+
+
+
+
+
+# 原本的细节
+
 ###### 配置launch.json
 
 ```js

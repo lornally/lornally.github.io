@@ -73,8 +73,6 @@ m10.addEventListener "click",c10c
 
 
 
-
-
 ## 不推荐的硬插写法
 
 ```js

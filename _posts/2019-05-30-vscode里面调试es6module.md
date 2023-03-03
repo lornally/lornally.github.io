@@ -15,10 +15,11 @@
       "name": "Launch Program",
       "program": "${workspaceFolder}/code/test.js",
       "sourceMaps": true,
-      "outFiles": ["${workspaceFolder}/code/*"],
+      "outFiles": ["${workspaceFolder}/code/*"], // 这一行也很关键
       "runtimeArgs": ["--experimental-modules"] //核心配置是这一句
     }
   ]
 }
 ```
 
+> 核心内容都整理到隔壁的vscode 调试 coffee那个blog里面了
