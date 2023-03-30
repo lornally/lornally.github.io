@@ -62,5 +62,37 @@ python select interpreter
 # 选择你期望的环境, 按照上面设置的情况, 需要选择: p11
 ```
 
+### apple的m芯片加速
 
+> 参考: https://developer.apple.com/metal/pytorch/
 
+安装anaconda 针对mac/m芯片优化的版本
+
+```sh
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+sh Miniconda3-latest-MacOSX-arm64.sh
+# 装好了有提示: If you'd prefer that conda's base environment not be activated on startup,    set the auto_activate_base parameter to false: 
+conda config --set auto_activate_base false
+```
+
+安装对应的pytorch等等
+
+```sh
+conda install pytorch torchvision torchaudio -c pytorch-nightly
+```
+
+python测试
+
+```python
+import torch
+if torch.backends.mps.is_available():
+    mps_device = torch.device("mps")
+    x = torch.ones(1, device=mps_device)
+    print (x)
+else:
+    print ("MPS device not found.")
+```
+
+- 苹果有各种加速, TensorFlow也有加速
+  -  https://github.com/orgs/apple/repositories
+  - https://huggingface.co/apple
