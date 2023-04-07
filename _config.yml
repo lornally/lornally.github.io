@@ -99,5 +99,5 @@ kramdown:
 
 exclude: ['README.md', 'LICENSE']
 
-gems:
+plugins:
   - jekyll-feed
