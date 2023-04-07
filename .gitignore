@@ -1,5 +1,7 @@
 _site
 .sass-cache
+.jekyll-cache
 .jekyll-metadata
-.*
-!.gitignore
+vendor
+.DS_Store
+Gemfile.lock
