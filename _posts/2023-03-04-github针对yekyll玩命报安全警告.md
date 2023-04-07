@@ -156,3 +156,17 @@ gem update github-pages
 反思一下, 可能是我用的theme的问题
 
 > 一个悲伤的故事, 恐怕只能放弃这个了..... 就这样吧
+
+- 21:00 想要放弃, 看到曙光
+
+```sh
+# 如果ruby升级, 可能导致无法执行
+bundle add webrick
+# 然后就可以执行了
+bundle exec jekyll serve
+# 调试模式
+bundle exec jekyll serve --livereload
+# 参考: https://juejin.cn/post/7134178480727523364
+```
+
+- 然后作者指出, 模板需要单独更新
