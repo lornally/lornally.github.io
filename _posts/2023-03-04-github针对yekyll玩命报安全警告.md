@@ -170,3 +170,8 @@ bundle exec jekyll serve --livereload
 ```
 
 - 然后作者指出, 模板需要单独更新
+
+### 20230410
+
+> 有一个猜测, 可能并不需要theme, 只要改_config.html就OK了
+
