@@ -29,4 +29,4 @@ respective owners:
 
 * js/bootstrap.min.js - [bootstrap](http://getbootstrap.com)
 * css/bootstrap.min.css - [bootstrap](http://getbootstrap.com)
-* js/jquery.min.js - [jquery](https://jquery.com)
+* jquery- [jquery](https://jquery.com)
