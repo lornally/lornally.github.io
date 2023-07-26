@@ -52,7 +52,6 @@ print(plt.get_cachedir())
 .Aqua Kana
 .Keyboard
 .New York
-.New York
 .SF Arabic
 .SF Compact
 .SF Compact Rounded
