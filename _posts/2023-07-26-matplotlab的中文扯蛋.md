@@ -39,8 +39,8 @@ print(plt.get_cachedir())
 
 ### 气人的苹果
 
-1. font book显示的字体是没用的, 一堆pingfang没有能用的
-2. font的文件名和字体名几乎可以认为没关系. 这帮傻叉
+1. font book显示的字体是没用的, 一堆pingfang没有能用的, 纯纯油饼
+2. font的文件名和字体名几乎无关. 这帮傻叉
 3. font的文件名就没有i18n的概念, 傻出天际
 4. matplot脑子抽了, 默认字体不是系统的默认字体, 傻叉本叉
 
