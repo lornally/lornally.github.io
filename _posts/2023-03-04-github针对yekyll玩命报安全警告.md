@@ -179,3 +179,8 @@ bundle exec jekyll serve --livereload
 * 回到github, 项目的setting tab. 点一下
 * sidebar 的section中的 code and automation -> 点击pages
 * 页面中找到custom domain, 改为isuyu.cn, 稍等一下, 这个世界清净了
+
+### 20240208
+
+> github再次报错, 报jquery的错误
+
