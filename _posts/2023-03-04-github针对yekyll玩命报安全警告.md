@@ -183,4 +183,13 @@ bundle exec jekyll serve --livereload
 ### 20240208
 
 > github再次报错, 报jquery的错误
+* 但是我找不到引入jquery的地方
+
+```sh
+bundle update # 这个报一堆问题
+bundle update github-pages # pages官方建议这个    https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll#keeping-your-site-up-to-date-with-the-github-pages-gem
+# 然后报错
+Installing commonmarker 0.23.10 with native extensions Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+# copilot建议安装command-tools, 但是, 本身command-tools已经安装好了. 至此, 走到了死胡同
+```
 
