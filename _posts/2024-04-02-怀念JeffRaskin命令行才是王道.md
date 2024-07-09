@@ -8,7 +8,7 @@
 #### 压缩工具
 
 * https://www.win-rar.com/faq.html
-* brew安装
+* brew install rar
 * unrar e xxx.rar  
 * unrar x -kb Rain2021.rar   # 解压且忽略错误, 不过x会导致解压到当前目录, 还是e更合理
 
