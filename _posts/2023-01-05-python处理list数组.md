@@ -36,7 +36,12 @@ li.sort()
 # 新建个数组
 x=list(range(len(li)))
 
+
+# 遍历
+for index, value in enumerate(my_list)
+# 随机得到一个元素
+next(iter(点队列))
+
 ```
 
-### 
 
