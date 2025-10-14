@@ -93,8 +93,8 @@ QPainterPath ← 纯数据类                      # 路径（非 QObject）
 | 键盘 | `keyPressEvent` / `keyReleaseEvent`                          | 快捷键、Del 删图元      |
 | 菜单 | `contextMenuEvent`                                           | 右键菜单                |
 | 拖放 | `dragEnterEvent` / `dragMoveEvent` / `dropEvent` / `dragLeaveEvent` | 文件拖进来创建节点      |
-| 手势 | `gestureEvent`                                               | 捏合、滑动              |
-| 触摸 | `touchEvent`                                                 | 多点触控                |
+| 手势 | `gestureEvent`      2025-10-15 这个不能用                         | 捏合、滑动              |
+| 触摸 | `touchEvent`    同上                                           | 多点触控                |
 | 焦点 | `focusInEvent` / `focusOutEvent`                             | 很少用，Item 焦点更常用 |
 | 大小 | `resizeEvent`                                                | 窗口变尺寸时重新布局    |
 | 绘制 | `drawBackground` / `drawForeground`                          | 自定义网格、水印        |
