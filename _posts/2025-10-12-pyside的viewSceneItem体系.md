@@ -261,3 +261,18 @@ signals:
 - **重载虚函数** → 处理绘制、交互、碰撞；  
 - **连接信号** → 监听选择、位置、生命周期变化；  
 - **eventFilter / property NOTIFY** → 跨模块、全局、QML 数据绑定。
+
+### 核心库之外
+
+* QChartView, 用来展示图表, 配合QChart使用, 
+
+* QChart 继承自 `QGraphicsWidget`，而 `QGraphicsWidget` 又继承自 `QGraphicsObject` → 它是 scene 里的一棵 item 树
+* 不论是qchartview还是qchart都不是qt核心库成员, 而是qtchart库成员
+* 类似的还有qtsvg的QGraphicsSvgItem
+
+### 性能
+
+- Scene 内部用 **BSP 树** 做空间索引，**百万级 item 仍能实时刷新**
+- 只更新“脏矩形”——调用 `update(QRectF)` 而非 `update()`
+- 对不需要事件的 item 关闭 `setAcceptHoverEvents(false)` 可减少 1/3 事件流量
+- 多 View 共用同 Scene 时，显存只多一个帧缓冲，**比多 Scene 省得多**

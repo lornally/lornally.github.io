@@ -49,3 +49,26 @@
 - **没有 `deleteLater()`**
 - **没有 `setProperty()/property()`**
 - **不会被 `QTimer.singleShot(0, obj, slot)` 这类“槽”调用**
+
+### 继承链
+
+QGraphicsItem           ← 纯几何/绘制对象，无信号槽，无焦点，无布局
+   ↑
+QGraphicsObject        ← 在 item 基础上加入 QObject 信号槽、属性系统
+   ↑
+QGraphicsWidget        ← 再加入矩形几何、布局、大小策略、焦点、调色板，像 QWidget
+
+### 13太保之外
+
+* 基础库之外, qt还有charts等库. 因此有13太保之外的item, 比如: 
+  * QChart
+  * QGraphicsSvgItem
+
+| 类                                                | 作用                        | 典型用法                           |
+| ------------------------------------------------- | --------------------------- | ---------------------------------- |
+| `QGraphicsItemGroup`                              | 把若干 item 打包成整体      | 一页内容整体 hide/show             |
+| `QGraphicsWidget`                                 | 拥有几何+布局系统的 item    | 自制按钮、面板、窗体               |
+| `QGraphicsProxyWidget`                            | 把**纯 QWidget** 塞进 Scene | 复用现有 QPushButton、QLineEdit 等 |
+| `QGraphicsRectItem/EllipseItem/TextItem/PathItem` | 几何图元                    | 背景框、高亮框、图标               |
+| `QGraphicsObject`                                 | 带信号槽的 item 基类        | 需要发自定义信号时继承它           |
+| `QGraphicsLayout` 家族                            | 在 Scene 里做布局           | 给 QGraphicsWidget 排子控件        |

@@ -1,5 +1,17 @@
 > view就是widget
 
+### 关系
+
+view/scene/item架构中view有两个:
+
+* 父类: QGraphicsView, 基础类, 一般情况都用它
+* 子类: QChartView, 用来展示图表, 配合QChart使用, 
+  * QChart 继承自 `QGraphicsWidget`，而 `QGraphicsWidget` 又继承自 `QGraphicsObject` → 它是 scene 里的一棵 item 树
+  * 不论是qchartview还是qchart都不是qt核心库成员, 而是qtchart库成员
+  * 类似的还有qtsvg的QGraphicsSvgItem
+
+### 内容
+
 一、setWindowFlags 常用值（**对系统窗口管理器说话**）
 
 | 标志                       | 作用                             |
