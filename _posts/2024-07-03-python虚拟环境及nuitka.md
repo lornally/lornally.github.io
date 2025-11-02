@@ -205,3 +205,102 @@ pip install pyside6
 pip install Nuitka
 ```
 
+### 2025-10-29 后记
+
+1. 真牛逼, macos升级之后, 会破坏nuitka的编译, 原因是破坏了brew安装的python, 所以根源是brew
+
+```sh
+
+# 升级后 CLT 往往被系统清掉
+xcode-select --install        # 弹窗安装
+sudo xcode-select -s /Library/Developer/CommandLineTools # 这一行可能报错, 我忽略了.
+
+# 下面这些可能会失败, 打开系统代理可以解决问题.
+# 把 Homebrew 仓库回退到与当前系统匹配的干净状态
+brew update-reset
+
+# 再升级一次 formulae
+brew update && brew upgrade
+
+# 自检并按提示修复
+brew doctor
+
+# 升级或者重新安装
+pip install -U nuitka  # 升级
+brew reinstall python # 重装
+# 一般而言, 此时OK了.
+
+# 还是不行, 最后只能清理brew, 重新安装
+brew cleanup -s
+# 这个是删除, 之前要which一下看看在哪里
+sudo rm -rf ~/Library/Caches/Homebrew
+
+```
+
+2. python有universal概念, 在macos用这个版本的python就可以打包同时兼容intel和m的包
+
+```sh
+1. 重装/切换 universal Python
+# 从python官网下载. 默认就是universal, 然后安装.
+# 安装最后有个证书操作, 此时要关闭系统代理和terminal代理.
+# 然后用新安装的python打包
+which python3                                                 
+/Library/Frameworks/Python.framework/Versions/3.12/bin/python3
+# 升级证书操作
+/Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m pip install --upgrade certifi
+python3 -m pip install --upgrade certifi
+# 然后安装包就会出错, 需要手动改.zshrc
+export SSL_CERT_FILE=$(python3 -m certifi)
+
+# 退出之前的虚拟环境.
+deactivate
+
+# 创建目录名为 .qtuniversal 的虚拟环境, 用点是因为要默认隐藏, 避免误操作
+python3 -m venv /Users/bergman/.qtuniversal
+
+# 激活虚拟环境：
+source /Users/bergman/.qtuniversal/bin/activate
+
+# 设置vscode的setting
+  "python.defaultInterpreterPath": "/Users/bergman/.pysidenv/bin/python",
+
+# 此时可以验证一下:
+file $(python -c "import sys; print(sys.executable)")
+
+# 然后安装
+pip install pyside6, Nuitka
+
+
+
+# 最后nuitka打包, 最关键是这行:--macos-target-arch=universal
+
+python -m nuitka \
+  --mode=app \
+  --macos-target-arch=universal \
+  --enable-plugin=pyside6 \
+  pig.py
+```
+
+
+
+3. 手动安装python可能有问题
+
+
+
+```sh
+
+
+# 我之前从python官网下载安装的python
+which python3 
+/Library/Frameworks/Python.framework/Versions/3.12/bin/python3
+# 但是, 我发现这个python还需要安装证书, 还需要修改.zshrc:    
+export SSL_CERT_FILE=$(python3 -m certifi)
+# 这样是不是就和我从brew安装的python冲突了? 是不是应该卸载这个手动安装的python?
+# ai建议, 卸载掉他
+
+
+sudo rm -rf /Library/Frameworks/Python.framework
+sudo rm -rf /Applications/Python\ 3.12
+sudo mv /usr/local/bin/python3.12 /usr/local/bin/python3.12.bak
+```
+
