@@ -170,7 +170,7 @@ brew install python@3.12
 python3.12 --version
 
 # 创建目录名为 .pysidenv 的虚拟环境, 用点是因为要默认隐藏, 避免误操作
-python3.12 -m venv /Users/bergman/.pysidenv
+python3.13 -m venv /Users/bergman/.pysidenv
 
 # 激活虚拟环境：
 source /Users/bergman/.pysidenv/bin/activate
