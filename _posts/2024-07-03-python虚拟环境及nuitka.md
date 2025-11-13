@@ -304,3 +304,12 @@ sudo rm -rf /Applications/Python\ 3.12
 sudo mv /usr/local/bin/python3.12 /usr/local/bin/python3.12.bak
 ```
 
+###### 2025-11-12
+
+```sh
+# pip安装某个版本的nuitka
+pip install nuitka==2.7.11
+pip install -U nuitka  # 升级
+
+```
+

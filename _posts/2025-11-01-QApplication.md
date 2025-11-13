@@ -73,6 +73,10 @@ app.lastWindowClosed.connect(lambda: qDebug("last window gone"))
 
 print此时很可能是失效/甚至是app崩溃的原因
 
+
+
+##### 下面说的不对, 最好的办法就是输出到文本文件, 用logging或者直接写标准输出文件位置, console一般就是看不到
+
 * 用 **Qt 自己的日志通道** (`qDebug`, `qWarning`) 输出，保证在 Console.app / Xcode 日志 / `log stream` 里一定能看见。
 * 开发阶段vscode的terminal直接可以看到
 * app阶段, 打开应用: console, -> 点击工具栏最左侧的: 开始 -> 然后搜索框输入 xxx.app 作为过滤条件, 搜索框可以谓词
