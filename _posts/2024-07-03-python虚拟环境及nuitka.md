@@ -239,7 +239,7 @@ sudo rm -rf ~/Library/Caches/Homebrew
 
 ```
 
-2. python有universal概念, 在macos用这个版本的python就可以打包同时兼容intel和m的包
+2. 这是错误的, 不work: python有universal概念, 在macos用这个版本的python就可以打包同时兼容intel和m的包
 
 ```sh
 1. 重装/切换 universal Python
