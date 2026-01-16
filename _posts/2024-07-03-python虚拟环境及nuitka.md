@@ -270,7 +270,7 @@ source /Users/bergman/.qtuniversal/bin/activate
 file $(python -c "import sys; print(sys.executable)")
 
 # 然后安装
-pip install pyside6, Nuitka
+pip install pyside6 Nuitka
 
 
 
@@ -312,6 +312,26 @@ sudo mv /usr/local/bin/python3.12 /usr/local/bin/python3.12.bak
 # pip安装某个版本的nuitka
 pip install nuitka==2.7.11
 pip install -U nuitka  # 升级
+
+```
+
+###### 2026-1-15
+
+```sh
+# 默认安装到用户目录下, 这样就不必要求用户名一致了, 傻逼苹果不允许, 那么只能翻高度sharde目录了: Shared
+
+# 创建目录名为 .qtuniversal 的虚拟环境, 用点是因为要默认隐藏, 避免误操作
+python3.12 -m venv /Users/Shared/.pysidenv
+
+# 激活虚拟环境：
+source /Users/Shared/.pysidenv/bin/activate
+
+pip install pyside6 Nuitka
+
+# 设置vscode的setting
+  "python.defaultInterpreterPath": "/Users/Shared/.pysidenv/bin/python",
+# 设置launch
+      "python": "/Users/Shared/.pysidenv/bin/python"
 
 ```
 
