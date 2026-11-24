@@ -27,6 +27,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: machangkun
 github_username:  lornally
 
+# ICP 备案号（显示在页脚，改成真实备案号即可；留空则页脚不显示）
+# 照备案系统里显示的“网站备案号”原样填写（有的带 -1 这类网站序号后缀，有的不带）
+icp: 浙ICP备2026103470号
+
 # Build settings
 theme: minima
 plugins:
